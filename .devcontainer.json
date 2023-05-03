@@ -13,20 +13,19 @@
         ]
       },
       "extensions": [
-		"EditorConfig.EditorConfig",
-		"GitHub.copilot",
-		"mads-hartmann.bash-ide-vscode",
-		"mkhl.shfmt",
-		"GitHub.vscode-github-actions",
-		"redhat.vscode-yaml"
-	]
+        "EditorConfig.EditorConfig",
+        "mads-hartmann.bash-ide-vscode",
+        "GitHub.vscode-github-actions",
+        "redhat.vscode-yaml"
+      ]
     }
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
-      "packages": "shellcheck"
-    }
+    "ghcr.io/nikaro/devcontainer-features/packages:1": {
+      "packages": "curl,jq,shellcheck"
+    },
+    "ghcr.io/nikaro/devcontainer-features/shfmt:1": {}
   },
   "remoteUser": "node",
   "updateContentCommand": "npm install -g @devcontainers/cli"
