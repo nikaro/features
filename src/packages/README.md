@@ -15,7 +15,7 @@ Install packages from distribution package manager.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| packages | Space or comma separated list of packages. | string | curl,jq |
+| packages | Space or comma separated list of packages. | string | - |
 
 
 
