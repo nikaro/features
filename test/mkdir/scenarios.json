@@ -1,0 +1,10 @@
+{
+  "test_dir": {
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+      "mkdir": {
+        "directories": "/tmp/hello"
+      }
+    }
+  }
+}
