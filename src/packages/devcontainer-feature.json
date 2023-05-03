@@ -1,12 +1,12 @@
 {
   "id": "packages",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "packages",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/packages",
   "description": "Install packages from distribution package manager.",
   "options": {
     "packages": {
-      "default": "curl,jq",
+      "default": "",
       "description": "Space or comma separated list of packages.",
       "proposals": [
         "curl,git"

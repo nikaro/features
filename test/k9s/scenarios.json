@@ -1,0 +1,31 @@
+{
+  "test_alpine": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "k9s": {}
+    }
+  },
+  "test_debian": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "k9s": {}
+    }
+  },
+  "test_version": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "k9s": {
+        "version": "0.27.2"
+      }
+    }
+  }
+}

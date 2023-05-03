@@ -4,6 +4,6 @@ set -e
 
 source dev-container-features-test-lib
 
-check "skip" :
+check "ensure is installed" k9s version
 
 reportResults

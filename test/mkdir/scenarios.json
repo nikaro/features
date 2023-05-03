@@ -1,5 +1,13 @@
 {
-  "test_dir": {
+  "test_alpine": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "mkdir": {
+        "directories": "/tmp/hello"
+      }
+    }
+  },
+  "test_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "mkdir": {
