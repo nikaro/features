@@ -17,6 +17,12 @@ Install shfmt, a shell formatter.
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
 
+## Customizations
+
+### VS Code Extensions
+
+- `foxundermoon.shell-format`
+
 
 
 ---
