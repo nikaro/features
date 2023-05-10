@@ -1,6 +1,6 @@
 {
   "id": "github-cli",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "name": "github-cli",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/github-cli",
   "description": "GitHub’s official command line tool.",
@@ -12,6 +12,14 @@
         "2.29.0"
       ],
       "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github"
+      ]
     }
   },
   "installsAfter": [

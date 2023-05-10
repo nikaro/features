@@ -25,3 +25,4 @@ curl -sSL "https://github.com/cli/cli/releases/download/v${VERSION}/gh_${VERSION
 tar -xzf /tmp/gh.tar.gz -C /tmp "gh_${VERSION}_linux_${ARCHITECTURE}/bin/gh"
 mv "/tmp/gh_${VERSION}_linux_${ARCHITECTURE}/bin/gh" /usr/local/bin/gh
 chmod 0755 /usr/local/bin/gh
+chown root:root /usr/local/bin/gh
