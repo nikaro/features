@@ -9,7 +9,7 @@
     }
   },
   "test_debian": {
-    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "packages": {
         "packages": "curl,jq"

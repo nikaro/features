@@ -5,7 +5,7 @@
       "packages": {
         "packages": "curl,jq"
       },
-      "k9s": {}
+      "github-cli": {}
     }
   },
   "test_debian": {
@@ -14,7 +14,7 @@
       "packages": {
         "packages": "curl,jq"
       },
-      "k9s": {}
+      "github-cli": {}
     }
   },
   "test_version": {
@@ -23,8 +23,8 @@
       "packages": {
         "packages": "curl,jq"
       },
-      "k9s": {
-        "version": "0.27.2"
+      "github-cli": {
+        "version": "2.29.0"
       }
     }
   }
