@@ -1,0 +1,62 @@
+{
+  "id": "google-cloud-cli",
+  "version": "1.0.0",
+  "name": "google-cloud-cli",
+  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/google-cloud-cli",
+  "description": "Google Cloud CLI.",
+  "options": {
+    "version": {
+      "default": "430.0.0",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "430.0.0"
+      ],
+      "type": "string"
+    },
+    "telemetry": {
+      "default": "false",
+      "description": "Enable anonymous usage reporting.",
+      "proposals": [
+        "true",
+        "false"
+      ],
+      "type": "string"
+    },
+    "rc-path": {
+      "default": "",
+      "description": "Profile to update with PATH and completion.",
+      "proposals": [
+        "/etc/profile.d/90-gcloud.sh"
+      ],
+      "type": "string"
+    },
+    "override-components": {
+      "default": "",
+      "description": "Override the components that would be installed by default and install these instead.",
+      "proposals": [
+        "/etc/profile.d/90-gcloud.sh"
+      ],
+      "type": "string"
+    },
+    "additional-components": {
+      "default": "",
+      "description": "Additional components to install by default.",
+      "proposals": [
+        "core",
+        "core gsutil bq"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/devcontainer-features/packages"
+  ]
+}
