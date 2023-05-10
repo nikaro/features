@@ -1,5 +1,5 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+  "image": "mcr.microsoft.com/devcontainers/base:alpine",
   "customizations": {
     "vscode": {
       "settings": {
@@ -10,7 +10,9 @@
             ],
             "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
           }
-        ]
+        ],
+        "terminal.integrated.defaultProfile.linux": "fish",
+        "terminal.integrated.defaultProfile.osx": "fish"
       },
       "extensions": [
         "EditorConfig.EditorConfig",
@@ -21,12 +23,25 @@
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/nikaro/devcontainer-features/packages:1": {
-      "packages": "curl,jq,shellcheck"
+    "ghcr.io/nikaro/devcontainer-features/mkdir": {
+      "directories": "/home/vscode/.config",
+      "owner": "vscode:vscode"
     },
-    "ghcr.io/nikaro/devcontainer-features/shfmt:1": {}
+    "ghcr.io/nikaro/devcontainer-features/packages": {
+      "packages": "curl,fish,jq,npm,shellcheck"
+    },
+    "ghcr.io/nikaro/devcontainer-features/github-cli": {},
+    "ghcr.io/nikaro/devcontainer-features/shfmt": {}
   },
-  "remoteUser": "node",
-  "updateContentCommand": "npm install -g @devcontainers/cli"
+  "updateContentCommand": {
+    "devcontainer-cli": "sudo npm install -g @devcontainers/cli",
+    "gh-poi": "gh extension install seachicken/gh-poi"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.config/fish,target=/home/vscode/.config/fish,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.config/gh,target=/home/vscode/.config/gh,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.config/git,target=/home/vscode/.config/git,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.config/gcloud,target=/home/vscode/.config/gcloud,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ]
 }
