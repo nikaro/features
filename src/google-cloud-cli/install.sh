@@ -25,7 +25,7 @@ aarch64 | armv8* | arm64)
   ;;
 esac
 
-curl -sSL https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-${VERSION}-linux-${ARCHITECTURE}.tar.gz -o /tmp/gcloud.tar.gz
+curl -sSL "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-${VERSION}-linux-${ARCHITECTURE}.tar.gz" -o /tmp/gcloud.tar.gz
 tar -xzf /tmp/gcloud.tar.gz -C /tmp
 mv /tmp/google-cloud-sdk /opt/
 
