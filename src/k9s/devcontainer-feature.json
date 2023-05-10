@@ -1,6 +1,6 @@
 {
   "id": "k9s",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "k9s",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/k9s",
   "description": "Install K9s, a terminal based UI to interact with your Kubernetes clusters.",

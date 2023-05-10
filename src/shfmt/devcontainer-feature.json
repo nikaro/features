@@ -1,6 +1,6 @@
 {
   "id": "shfmt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "shfmt",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/shfmt",
   "description": "Install shfmt, a shell formatter.",

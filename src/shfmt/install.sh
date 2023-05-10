@@ -4,7 +4,7 @@ set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
 
 # get latest version
-if [ -z "$VERSION" ]; then
+if [ -z "${VERSION:-}" ]; then
     VERSION="$(curl -s https://api.github.com/repos/mvdan/sh/releases/latest | jq -r '.tag_name' | sed 's/v//')"
 fi
 
