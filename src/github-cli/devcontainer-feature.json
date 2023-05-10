@@ -1,6 +1,6 @@
 {
   "id": "github-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "github-cli",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/github-cli",
   "description": "GitHub’s official command line tool.",
