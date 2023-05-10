@@ -22,6 +22,7 @@ Install shfmt, a shell formatter.
 ### VS Code Extensions
 
 - `foxundermoon.shell-format`
+- `mads-hartmann.bash-ide-vscode`
 
 
 

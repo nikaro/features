@@ -17,6 +17,13 @@ GitHub’s official command line tool.
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
 
+## Customizations
+
+### VS Code Extensions
+
+- `github.vscode-github-actions`
+- `GitHub.vscode-pull-request-github`
+
 
 
 ---

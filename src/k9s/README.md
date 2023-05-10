@@ -17,6 +17,12 @@ Install K9s, a terminal based UI to interact with your Kubernetes clusters.
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
 
+## Customizations
+
+### VS Code Extensions
+
+- `ms-kubernetes-tools.vscode-kubernetes-tools`
+
 
 
 ---
