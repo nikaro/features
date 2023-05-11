@@ -1,0 +1,28 @@
+{
+  "id": "helm",
+  "version": "1.0.0",
+  "name": "helm",
+  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/helm",
+  "description": "The Kubernetes Package Manager.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "3.12.0"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/devcontainer-features/packages"
+  ]
+}
