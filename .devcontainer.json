@@ -17,6 +17,7 @@
       "extensions": [
         "EditorConfig.EditorConfig",
         "mads-hartmann.bash-ide-vscode",
+        "GitHub.copilot",
         "GitHub.vscode-github-actions",
         "redhat.vscode-yaml"
       ]
