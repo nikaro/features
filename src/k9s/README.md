@@ -22,6 +22,7 @@ Install K9s, a terminal based UI to interact with your Kubernetes clusters.
 ### VS Code Extensions
 
 - `ms-kubernetes-tools.vscode-kubernetes-tools`
+- `redhat.vscode-yaml`
 
 
 

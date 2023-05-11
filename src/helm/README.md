@@ -1,13 +1,13 @@
 
-# kubectl (kubectl)
+# helm (helm)
 
-Command line tool for communicating with Kubernetes API.
+The Kubernetes Package Manager.
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/kubectl:1": {}
+    "ghcr.io/nikaro/devcontainer-features/helm:1": {}
 }
 ```
 
@@ -28,4 +28,4 @@ Command line tool for communicating with Kubernetes API.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/kubectl/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/helm/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
