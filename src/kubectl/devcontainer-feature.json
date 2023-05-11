@@ -1,6 +1,6 @@
 {
   "id": "kubectl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "kubectl",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/kubectl",
   "description": "Command line tool for communicating with Kubernetes API.",
@@ -17,7 +17,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-kubernetes-tools.vscode-kubernetes-tools"
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "redhat.vscode-yaml"
       ]
     }
   },
