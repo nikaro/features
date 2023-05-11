@@ -1,4 +1,5 @@
 {
+  "name": "devcontainer-features",
   "image": "mcr.microsoft.com/devcontainers/base:alpine",
   "customizations": {
     "vscode": {
