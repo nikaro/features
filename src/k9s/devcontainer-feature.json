@@ -1,6 +1,6 @@
 {
   "id": "k9s",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "k9s",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/k9s",
   "description": "Install K9s, a terminal based UI to interact with your Kubernetes clusters.",
@@ -17,7 +17,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-kubernetes-tools.vscode-kubernetes-tools"
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "redhat.vscode-yaml"
       ]
     }
   },

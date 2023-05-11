@@ -25,3 +25,5 @@ curl -sSL "https://github.com/derailed/k9s/releases/download/v${VERSION}/k9s_Lin
 tar -xzf /tmp/k9s.tar.gz -C /tmp k9s
 mv /tmp/k9s /usr/local/bin/k9s
 chmod 0755 /usr/local/bin/k9s
+
+rm -rf /tmp/k9s.tar.gz
