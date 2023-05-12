@@ -1,0 +1,27 @@
+{
+  "id": "shellcheck",
+  "version": "1.0.0",
+  "name": "shellcheck",
+  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/shellcheck",
+  "description": "ShellCheck, a static analysis tool for shell scripts.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "0.9.0"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mads-hartmann.bash-ide-vscode"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/devcontainer-features/packages"
+  ]
+}
