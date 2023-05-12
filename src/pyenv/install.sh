@@ -50,4 +50,5 @@ fi
 # install python
 pyenv install "${PYTHON_VERSION}"
 pyenv global "${PYTHON_VERSION}"
-find "$(pyenv root)/versions/$(pyenv version | awk '{print $1}')" -type l -exec ln -sf {} /usr/local/bin/ +
+find "$(pyenv root)/versions/$(pyenv version | awk '{print $1}')/bin" -type f -exec ln -sf {} /usr/local/bin/ \;
+find "$(pyenv root)/versions/$(pyenv version | awk '{print $1}')/bin" -type l -exec ln -sf {} /usr/local/bin/ \;
