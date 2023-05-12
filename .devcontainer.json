@@ -28,9 +28,10 @@
       "owner": "vscode:vscode"
     },
     "ghcr.io/nikaro/devcontainer-features/packages": {
-      "packages": "curl,fish,git,jq,npm,shellcheck,vim"
+      "packages": "curl,fish,git,jq,npm,vim"
     },
     "ghcr.io/nikaro/devcontainer-features/github-cli": {},
+    "ghcr.io/nikaro/devcontainer-features/shellcheck": {},
     "ghcr.io/nikaro/devcontainer-features/shfmt": {}
   },
   "updateContentCommand": {
