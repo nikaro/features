@@ -17,13 +17,12 @@
       },
       "extensions": [
         "EditorConfig.EditorConfig",
-        "GitHub.copilot",
-        "GitHub.vscode-github-actions",
-        "redhat.vscode-yaml"
+        "GitHub.copilot"
       ]
     }
   },
   "features": {
+    "ghcr.io/nikaro/devcontainer-features/actionlint": {},
     "ghcr.io/nikaro/devcontainer-features/mkdir": {
       "directories": "/home/vscode/.config",
       "owner": "vscode:vscode"
