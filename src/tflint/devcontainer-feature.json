@@ -1,0 +1,27 @@
+{
+  "id": "tflint",
+  "version": "1.0.3",
+  "name": "tflint",
+  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/tflint",
+  "description": "A Pluggable Terraform Linter.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "0.46.1"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/devcontainer-features/packages"
+  ]
+}
