@@ -1,0 +1,31 @@
+{
+  "test_alpine": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "actionlint": {}
+    }
+  },
+  "test_debian": {
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "actionlint": {}
+    }
+  },
+  "test_version": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "actionlint": {
+        "version": "1.6.24"
+      }
+    }
+  }
+}
