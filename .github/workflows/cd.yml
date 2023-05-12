@@ -3,6 +3,9 @@ name: CD
 on:
   push:
     branches: [ main ]
+    paths:
+      - src/**
+      - test/**
   workflow_dispatch:
 
 jobs:
