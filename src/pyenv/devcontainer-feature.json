@@ -1,0 +1,45 @@
+{
+  "id": "poetry",
+  "version": "1.0.0",
+  "name": "poetry",
+  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/poetry",
+  "description": "Python packaging and dependency management made easy.",
+  "options": {
+    "pyenv_git_tag": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "2.3.17"
+      ],
+      "type": "string"
+    },
+    "pyenv_root": {
+      "default": "/opt/pyenv",
+      "description": "Path to the poetry home directory.",
+      "proposals": [
+        "/usr/local/poetry"
+      ],
+      "type": "string"
+    },
+    "python_version": {
+      "default": "",
+      "description": "Python version to install through pyenv. If not specified, the latest version will be installed.",
+      "proposals": [
+        "3.11",
+        "3.9.6"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/devcontainer-features/packages"
+  ]
+}
