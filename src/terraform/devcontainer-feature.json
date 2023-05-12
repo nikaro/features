@@ -1,0 +1,28 @@
+{
+  "id": "terraform",
+  "version": "1.0.3",
+  "name": "terraform",
+  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/terraform",
+  "description": "Terraform enables you to safely and predictably create, change, and improve infrastructure.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "1.4.6"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "foxundermoon.shell-format",
+        "mads-hartmann.bash-ide-vscode"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/devcontainer-features/packages"
+  ]
+}
