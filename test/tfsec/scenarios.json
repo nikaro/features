@@ -1,0 +1,31 @@
+{
+  "test_alpine": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "tfsec": {}
+    }
+  },
+  "test_debian": {
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "tfsec": {}
+    }
+  },
+  "test_version": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,jq"
+      },
+      "tfsec": {
+        "version": "1.28.1"
+      }
+    }
+  }
+}
