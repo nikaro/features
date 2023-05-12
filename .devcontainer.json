@@ -17,7 +17,6 @@
       },
       "extensions": [
         "EditorConfig.EditorConfig",
-        "mads-hartmann.bash-ide-vscode",
         "GitHub.copilot",
         "GitHub.vscode-github-actions",
         "redhat.vscode-yaml"
@@ -30,7 +29,7 @@
       "owner": "vscode:vscode"
     },
     "ghcr.io/nikaro/devcontainer-features/packages": {
-      "packages": "curl,fish,jq,npm,shellcheck"
+      "packages": "curl,fish,git,jq,npm,shellcheck,vim"
     },
     "ghcr.io/nikaro/devcontainer-features/github-cli": {},
     "ghcr.io/nikaro/devcontainer-features/shfmt": {}
