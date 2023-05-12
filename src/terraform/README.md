@@ -21,8 +21,7 @@ Terraform enables you to safely and predictably create, change, and improve infr
 
 ### VS Code Extensions
 
-- `foxundermoon.shell-format`
-- `mads-hartmann.bash-ide-vscode`
+- `hashicorp.terraform`
 
 
 
