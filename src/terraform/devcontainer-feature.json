@@ -1,6 +1,6 @@
 {
   "id": "terraform",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "terraform",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/terraform",
   "description": "Terraform enables you to safely and predictably create, change, and improve infrastructure.",
@@ -17,8 +17,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "foxundermoon.shell-format",
-        "mads-hartmann.bash-ide-vscode"
+        "hashicorp.terraform"
       ]
     }
   },
