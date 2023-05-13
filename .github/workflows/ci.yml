@@ -32,7 +32,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    continue-on-error: true
     permissions:
       contents: read
     steps:
