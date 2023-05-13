@@ -1,0 +1,27 @@
+{
+  "id": "node",
+  "version": "1.0.0",
+  "name": "node",
+  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/node",
+  "description": "Simple Python version management.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "20.1.0"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/devcontainer-features/packages"
+  ]
+}
