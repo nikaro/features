@@ -2,7 +2,7 @@
   "id": "pyenv",
   "version": "1.0.1",
   "name": "pyenv",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/poetry",
+  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/pyenv",
   "description": "Simple Python version management.",
   "options": {
     "pyenv_git_tag": {
