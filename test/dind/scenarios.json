@@ -1,0 +1,31 @@
+{
+  "test_alpine": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,fuse-overlayfs,git,jq,iptables"
+      },
+      "dind": {}
+    }
+  },
+  "test_debian": {
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+      "packages": {
+        "packages": "curl,fuse-overlayfs,git,jq,iptables"
+      },
+      "dind": {}
+    }
+  },
+  "test_version": {
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+      "packages": {
+        "packages": "curl,fuse-overlayfs,git,jq,iptables"
+      },
+      "dind": {
+        "version": "23.0.5"
+      }
+    }
+  }
+}
