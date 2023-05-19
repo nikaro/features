@@ -1,13 +1,4 @@
 {
-  "test_pyenv_alpine": {
-    "image": "mcr.microsoft.com/devcontainers/base:alpine",
-    "features": {
-      "packages": {
-        "packages": "bash,curl,git,jq,libffi-dev"
-      },
-      "pyenv": {}
-    }
-  },
   "test_pyenv_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
