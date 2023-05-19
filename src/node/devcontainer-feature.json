@@ -1,6 +1,6 @@
 {
   "id": "node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "node",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/node",
   "description": "Simple Python version management.",

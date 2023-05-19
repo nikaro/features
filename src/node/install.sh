@@ -37,14 +37,14 @@ esac
 
 # set url depending on libc used
 if ldd --version | grep -q musl; then
-  URL="https://nodejs.org/dist/v${VERSION}/node-v${VERSION}-linux-${ARCHITECTURE}.tar.xz"
-else
+  URL="https://unofficial-builds.nodejs.org/download/release/v${VERSION}/node-v${VERSION}-linux-${ARCHITECTURE}-musl.tar.xz"
   # arm64 is not yet supported for musl
   if [ "${ARCHITECTURE}" = "arm64" ]; then
     echo "arm64-musl unsupported"
     exit 1
   fi
-  URL="https://unofficial-builds.nodejs.org/download/release/v${VERSION}/node-v${VERSION}-linux-${ARCHITECTURE}-musl.tar.xz"
+else
+  URL="https://nodejs.org/dist/v${VERSION}/node-v${VERSION}-linux-${ARCHITECTURE}.tar.xz"
 fi
 
 # install
