@@ -1,5 +1,5 @@
 {
-  "test_alpine": {
+  "test_dind_alpine": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {
@@ -8,7 +8,7 @@
       "dind": {}
     }
   },
-  "test_debian": {
+  "test_dind_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "packages": {
@@ -17,7 +17,7 @@
       "dind": {}
     }
   },
-  "test_version": {
+  "test_dind_version": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {

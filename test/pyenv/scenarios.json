@@ -1,5 +1,5 @@
 {
-  "test_alpine": {
+  "test_pyenv_alpine": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {
@@ -8,7 +8,7 @@
       "pyenv": {}
     }
   },
-  "test_debian": {
+  "test_pyenv_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "packages": {
@@ -17,7 +17,7 @@
       "pyenv": {}
     }
   },
-  "test_version": {
+  "test_pyenv_version": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {

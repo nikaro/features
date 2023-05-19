@@ -1,5 +1,5 @@
 {
-  "test_alpine": {
+  "test_tflint_alpine": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {
@@ -8,7 +8,7 @@
       "tflint": {}
     }
   },
-  "test_debian": {
+  "test_tflint_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "packages": {
@@ -17,7 +17,7 @@
       "tflint": {}
     }
   },
-  "test_version": {
+  "test_tflint_version": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {

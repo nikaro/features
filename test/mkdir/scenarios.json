@@ -1,5 +1,5 @@
 {
-  "test_alpine": {
+  "test_mkdir_alpine": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "mkdir": {
@@ -7,7 +7,7 @@
       }
     }
   },
-  "test_debian": {
+  "test_mkdir_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "mkdir": {

@@ -1,5 +1,5 @@
 {
-  "test_alpine": {
+  "test_gh_alpine": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {
@@ -8,7 +8,7 @@
       "github-cli": {}
     }
   },
-  "test_debian": {
+  "test_gh_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "packages": {
@@ -17,7 +17,7 @@
       "github-cli": {}
     }
   },
-  "test_version": {
+  "test_gh_version": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {

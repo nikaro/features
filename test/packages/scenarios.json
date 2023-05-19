@@ -1,5 +1,5 @@
 {
-  "test_curl_alpine": {
+  "test_pkg_alpine": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {
@@ -7,7 +7,7 @@
       }
     }
   },
-  "test_curl_debian": {
+  "test_pkg_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "packages": {

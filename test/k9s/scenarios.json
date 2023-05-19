@@ -1,5 +1,5 @@
 {
-  "test_alpine": {
+  "test_k9s_alpine": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {
@@ -8,7 +8,7 @@
       "k9s": {}
     }
   },
-  "test_debian": {
+  "test_k9s_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "packages": {
@@ -17,7 +17,7 @@
       "k9s": {}
     }
   },
-  "test_version": {
+  "test_k9s_version": {
     "image": "mcr.microsoft.com/devcontainers/base:alpine",
     "features": {
       "packages": {
