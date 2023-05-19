@@ -29,6 +29,12 @@ URL="https://download.docker.com/linux/static/stable/${ARCHITECTURE}"
 curl -sSL "${URL}/docker-${VERSION}.tgz" -o /tmp/docker.tgz
 tar -xaf /tmp/docker.tgz -C /usr/local/bin/ --strip-components=1
 
+# configure docker group
+groupadd docker
+if [ -z "${USERNAME:-}" ]; then
+  usermod -aG docker "${USERNAME}"
+fi
+
 # copy entrypoint script
 DIR=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
 cp "${DIR}/entrypoint.sh" /dockerd-entrypoint.sh

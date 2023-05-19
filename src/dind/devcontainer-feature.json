@@ -1,6 +1,6 @@
 {
   "id": "dind",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "docker-in-docker",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/dind",
   "description": "",
@@ -11,6 +11,11 @@
       "proposals": [
         "23.0.6"
       ],
+      "type": "string"
+    },
+    "username": {
+      "default": "",
+      "description": "Username to add to the docker group.",
       "type": "string"
     }
   },
