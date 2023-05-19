@@ -31,8 +31,8 @@ tar -xaf /tmp/docker.tgz -C /usr/local/bin/ --strip-components=1
 
 # configure docker group
 groupadd docker
-if [ -z "${USERNAME:-}" ]; then
-  usermod -aG docker "${USERNAME}"
+if [ -n "${USERNAME:-}" ]; then
+  usermod -aG docker "${USERNAME:-}"
 fi
 
 # copy entrypoint script
