@@ -46,6 +46,7 @@ if [ "$(id -u)" -ne 0 ]; then
     (id "$USER" | grep -q '(docker)') || sudo usermod -aG docker "$USER"
 else
     eval "${dockerd_start}"
+    (id "$USER" | grep -q '(docker)') || usermod -aG docker "$USER"
 fi
 
 set +e

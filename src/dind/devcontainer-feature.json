@@ -1,6 +1,6 @@
 {
   "id": "dind",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "docker-in-docker",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/dind",
   "description": "",
