@@ -29,14 +29,14 @@ command -v git >/dev/null 2>&1 || {
 # get latest pyenv version
 if [ -z "${PYENV_GIT_TAG:-}" ]; then
   PYENV_GIT_TAG="$(curl -s https://api.github.com/repos/pyenv/pyenv/releases/latest | jq -r '.tag_name')"
-  export PYENV_GIT_TAG
 fi
+export PYENV_GIT_TAG
 
 # set install path
 if [ -z "${PYENV_ROOT:-}" ]; then
   PYENV_ROOT=/opt/pyenv
-  export PYENV_ROOT
 fi
+export PYENV_ROOT
 
 # install pyenv
 ln -sf "${PYENV_ROOT}/bin/pyenv" /usr/local/bin/pyenv

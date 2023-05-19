@@ -1,13 +1,4 @@
 {
-  "test_node_alpine": {
-    "image": "mcr.microsoft.com/devcontainers/base:alpine",
-    "features": {
-      "packages": {
-        "packages": "curl,jq"
-      },
-      "node": {}
-    }
-  },
   "test_node_debian": {
     "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
@@ -18,7 +9,7 @@
     }
   },
   "test_node_version": {
-    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
     "features": {
       "packages": {
         "packages": "curl,jq"
