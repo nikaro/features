@@ -24,7 +24,7 @@
         "packages": "curl,jq"
       },
       "tflint": {
-        "version": "3.5.1"
+        "version": "0.46.0"
       }
     }
   }
