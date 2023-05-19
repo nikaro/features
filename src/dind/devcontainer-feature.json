@@ -1,6 +1,6 @@
 {
   "id": "dind",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "docker-in-docker",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/dind",
   "description": "",
@@ -14,7 +14,7 @@
       "type": "string"
     },
     "username": {
-      "default": "",
+      "default": "vscode",
       "description": "Username to add to the docker group.",
       "type": "string"
     }

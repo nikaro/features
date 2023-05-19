@@ -31,7 +31,7 @@ tar -xaf /tmp/docker.tgz -C /usr/local/bin/ --strip-components=1
 
 # configure docker group
 groupadd docker
-if [ -n "${USERNAME:-}" ]; then
+if [ -n "${USERNAME:-}" ] && grep -q "${USERNAME:-}" /etc/passwd; then
   usermod -aG docker "${USERNAME:-}"
 fi
 
