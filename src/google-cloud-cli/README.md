@@ -15,7 +15,7 @@ Google Cloud CLI.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Version to install. If not specified, the latest version will be installed. | string | 430.0.0 |
+| version | Version to install. If not specified, the latest version will be installed. | string | - |
 | telemetry | Enable anonymous usage reporting. | string | false |
 | rc-path | Profile to update with PATH and completion. | string | - |
 | override-components | Override the components that would be installed by default and install these instead. | string | - |

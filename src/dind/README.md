@@ -16,7 +16,7 @@
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
-| username | Username to add to the docker group. | string | - |
+| username | Username to add to the docker group. | string | vscode |
 
 ## Customizations
 
