@@ -8,8 +8,7 @@ fi
 
 # get latest version
 if [ -z "${VERSION:-}" ]; then
-  echo "version required"
-  exit 1
+  VERSION=$(curl -sSL https://packages.cloud.google.com/apt/dists/cloud-sdk/main/binary-arm64/Packages | grep -A 2 '^Package: google-cloud-sdk$' | awk '/Version/ {print $2}' | sed 's/-[0-9]*$//')
 fi
 
 case "$(uname -m)" in

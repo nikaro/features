@@ -1,12 +1,12 @@
 {
   "id": "google-cloud-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "google-cloud-cli",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/google-cloud-cli",
   "description": "Google Cloud CLI.",
   "options": {
     "version": {
-      "default": "430.0.0",
+      "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
       "proposals": [
         "430.0.0"
