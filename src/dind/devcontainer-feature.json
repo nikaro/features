@@ -1,6 +1,6 @@
 {
   "id": "dind",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "name": "docker-in-docker",
   "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/dind",
   "description": "",
@@ -10,6 +10,14 @@
       "description": "Version to install. If not specified, the latest version will be installed.",
       "proposals": [
         "23.0.6"
+      ],
+      "type": "string"
+    },
+    "buildx_version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "0.10.4"
       ],
       "type": "string"
     },

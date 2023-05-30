@@ -18,16 +18,36 @@ command -v jq >/dev/null 2>&1 || {
 
 # get architecture
 ARCHITECTURE="$(uname -m)"
+# get architecture for buildx
+case "${ARCHITECTURE}" in
+x86_64)
+  BUILDX_ARCHITECTURE="amd64"
+  ;;
+aarch64 | armv8* | arm64)
+  BUILDX_ARCHITECTURE="arm64"
+  ;;
+*)
+  echo "Architecture unsupported"
+  exit 1
+  ;;
+esac
 
 # get latest version
 if [ -z "${VERSION:-}" ]; then
   VERSION="$(curl -s https://api.github.com/repos/moby/moby/releases/latest | jq -r '.tag_name' | sed 's/v//')"
+fi
+# get latest buildx version
+if [ -z "${BUILDX_VERSION:-}" ]; then
+  BUILDX_VERSION="$(curl -s https://api.github.com/repos/docker/buildx/releases/latest | jq -r '.tag_name' | sed 's/v//')"
 fi
 
 # install
 URL="https://download.docker.com/linux/static/stable/${ARCHITECTURE}"
 curl -sSL "${URL}/docker-${VERSION}.tgz" -o /tmp/docker.tgz
 tar -xaf /tmp/docker.tgz -C /usr/local/bin/ --strip-components=1
+# install buildx
+mkdir -p /usr/local/libexec/docker/cli-plugins
+curl -sSL "https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-${BUILDX_ARCHITECTURE}" -o /usr/local/libexec/docker/cli-plugins/docker-buildx
 
 # configure docker group
 groupadd docker
