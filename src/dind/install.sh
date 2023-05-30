@@ -40,6 +40,10 @@ fi
 if [ -z "${BUILDX_VERSION:-}" ]; then
   BUILDX_VERSION="$(curl -s https://api.github.com/repos/docker/buildx/releases/latest | jq -r '.tag_name' | sed 's/v//')"
 fi
+# get latest compose version
+if [ -z "${COMPOSE_VERSION:-}" ]; then
+  COMPOSE_VERSION="$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name' | sed 's/v//')"
+fi
 
 # install
 URL="https://download.docker.com/linux/static/stable/${ARCHITECTURE}"
@@ -49,6 +53,10 @@ tar -xaf /tmp/docker.tgz -C /usr/local/bin/ --strip-components=1
 mkdir -p /usr/local/libexec/docker/cli-plugins
 curl -sSL "https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-${BUILDX_ARCHITECTURE}" -o /usr/local/libexec/docker/cli-plugins/docker-buildx
 chmod +x /usr/local/libexec/docker/cli-plugins/docker-buildx
+# install compose
+mkdir -p /usr/local/libexec/docker/cli-plugins
+curl -sSL "https://github.com/docker/compose/releases/download/v${COMPOSE_VERSION}/docker-compose-linux-${ARCHITECTURE}" -o /usr/local/libexec/docker/cli-plugins/docker-compose
+chmod +x /usr/local/libexec/docker/cli-plugins/docker-compose
 
 # configure docker group
 groupadd docker
