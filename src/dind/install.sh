@@ -48,6 +48,7 @@ tar -xaf /tmp/docker.tgz -C /usr/local/bin/ --strip-components=1
 # install buildx
 mkdir -p /usr/local/libexec/docker/cli-plugins
 curl -sSL "https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-${BUILDX_ARCHITECTURE}" -o /usr/local/libexec/docker/cli-plugins/docker-buildx
+chmod +x /usr/local/libexec/docker/cli-plugins/docker-buildx
 
 # configure docker group
 groupadd docker
