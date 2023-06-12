@@ -1,8 +1,8 @@
 {
   "id": "github-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "github-cli",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/github-cli",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/github-cli",
   "description": "GitHub’s official command line tool.",
   "options": {
     "version": {
@@ -23,6 +23,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ]
 }

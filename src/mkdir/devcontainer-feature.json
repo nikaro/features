@@ -1,8 +1,8 @@
 {
   "id": "mkdir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "mkdir",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/mkdir",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/mkdir",
   "description": "Create directories with mkdir, set owner with chown and set permissions with chmod.",
   "options": {
     "directories": {

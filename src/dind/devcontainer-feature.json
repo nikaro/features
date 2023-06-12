@@ -1,8 +1,8 @@
 {
   "id": "dind",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "name": "docker-in-docker",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/dind",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/dind",
   "description": "",
   "options": {
     "version": {
@@ -43,7 +43,7 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ],
   "entrypoint": "/dockerd-entrypoint.sh",
   "privileged": true,

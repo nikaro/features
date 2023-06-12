@@ -1,8 +1,8 @@
 {
   "id": "terraform",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "terraform",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/terraform",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/terraform",
   "description": "Terraform enables you to safely and predictably create, change, and improve infrastructure.",
   "options": {
     "version": {
@@ -22,6 +22,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ]
 }

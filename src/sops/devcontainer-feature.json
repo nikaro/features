@@ -1,8 +1,8 @@
 {
   "id": "sops",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "sops",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/sops",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/sops",
   "description": "Simple and flexible tool for managing secrets.",
   "options": {
     "version": {
@@ -15,6 +15,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ]
 }

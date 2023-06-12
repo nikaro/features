@@ -1,8 +1,8 @@
 {
   "id": "packages",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "packages",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/packages",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/packages",
   "description": "Install packages from distribution package manager.",
   "options": {
     "packages": {

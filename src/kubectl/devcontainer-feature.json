@@ -1,8 +1,8 @@
 {
   "id": "kubectl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "kubectl",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/kubectl",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/kubectl",
   "description": "Command line tool for communicating with Kubernetes API.",
   "options": {
     "version": {
@@ -23,6 +23,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ]
 }

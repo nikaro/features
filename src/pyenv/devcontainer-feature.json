@@ -1,8 +1,8 @@
 {
   "id": "pyenv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "pyenv",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/pyenv",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/pyenv",
   "description": "Simple Python version management.",
   "options": {
     "pyenv_git_tag": {
@@ -40,6 +40,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ]
 }

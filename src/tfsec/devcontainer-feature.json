@@ -1,8 +1,8 @@
 {
   "id": "tfsec",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "tfsec",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/tfsec",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/tfsec",
   "description": "Install tfsec, a shell formatter.",
   "options": {
     "version": {
@@ -23,6 +23,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ]
 }

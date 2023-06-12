@@ -1,8 +1,8 @@
 {
   "id": "tflint",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "tflint",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/tflint",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/tflint",
   "description": "A Pluggable Terraform Linter.",
   "options": {
     "version": {
@@ -22,6 +22,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ]
 }

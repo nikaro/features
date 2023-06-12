@@ -1,8 +1,8 @@
 {
   "id": "shellcheck",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "shellcheck",
-  "documentationURL": "https://github.com/nikaro/devcontainer-features/tree/main/src/shellcheck",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/shellcheck",
   "description": "ShellCheck, a static analysis tool for shell scripts.",
   "options": {
     "version": {
@@ -22,6 +22,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/devcontainer-features/packages"
+    "ghcr.io/nikaro/features/packages"
   ]
 }
