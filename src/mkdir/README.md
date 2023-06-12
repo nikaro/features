@@ -7,7 +7,7 @@ Create directories with mkdir, set owner with chown and set permissions with chm
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/mkdir:1": {}
+    "ghcr.io/nikaro/features/mkdir:1": {}
 }
 ```
 
@@ -23,4 +23,4 @@ Create directories with mkdir, set owner with chown and set permissions with chm
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/mkdir/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/mkdir/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
