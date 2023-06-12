@@ -7,7 +7,7 @@ Simple and flexible tool for managing secrets.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/sops:1": {}
+    "ghcr.io/nikaro/features/sops:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Simple and flexible tool for managing secrets.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/sops/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/sops/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

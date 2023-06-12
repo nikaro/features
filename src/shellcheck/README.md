@@ -7,7 +7,7 @@ ShellCheck, a static analysis tool for shell scripts.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/shellcheck:1": {}
+    "ghcr.io/nikaro/features/shellcheck:1": {}
 }
 ```
 
@@ -27,4 +27,4 @@ ShellCheck, a static analysis tool for shell scripts.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/shellcheck/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/shellcheck/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -7,7 +7,7 @@ Install K9s, a terminal based UI to interact with your Kubernetes clusters.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/k9s:1": {}
+    "ghcr.io/nikaro/features/k9s:1": {}
 }
 ```
 
@@ -28,4 +28,4 @@ Install K9s, a terminal based UI to interact with your Kubernetes clusters.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/k9s/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/k9s/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

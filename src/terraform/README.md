@@ -7,7 +7,7 @@ Terraform enables you to safely and predictably create, change, and improve infr
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/terraform:1": {}
+    "ghcr.io/nikaro/features/terraform:1": {}
 }
 ```
 
@@ -27,4 +27,4 @@ Terraform enables you to safely and predictably create, change, and improve infr
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/terraform/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/terraform/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

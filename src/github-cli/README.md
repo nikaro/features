@@ -7,7 +7,7 @@ GitHub’s official command line tool.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/github-cli:1": {}
+    "ghcr.io/nikaro/features/github-cli:1": {}
 }
 ```
 
@@ -28,4 +28,4 @@ GitHub’s official command line tool.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/github-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/github-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
