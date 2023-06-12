@@ -7,7 +7,7 @@ Simple Python version management.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/node:1": {}
+    "ghcr.io/nikaro/features/node:1": {}
 }
 ```
 
@@ -27,4 +27,4 @@ Simple Python version management.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/node/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/node/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

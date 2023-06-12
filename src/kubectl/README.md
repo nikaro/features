@@ -7,7 +7,7 @@ Command line tool for communicating with Kubernetes API.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/kubectl:1": {}
+    "ghcr.io/nikaro/features/kubectl:1": {}
 }
 ```
 
@@ -28,4 +28,4 @@ Command line tool for communicating with Kubernetes API.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/kubectl/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/kubectl/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

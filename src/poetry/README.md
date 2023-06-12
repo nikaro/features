@@ -7,7 +7,7 @@ Python packaging and dependency management made easy.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/poetry:1": {}
+    "ghcr.io/nikaro/features/poetry:1": {}
 }
 ```
 
@@ -29,4 +29,4 @@ Python packaging and dependency management made easy.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/poetry/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/poetry/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
