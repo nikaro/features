@@ -25,8 +25,8 @@ aarch64 | armv8* | arm64)
 esac
 
 curl -sSL "https://github.com/aquasecurity/trivy/releases/download/v${VERSION}/trivy_${VERSION}_Linux-${ARCHITECTURE}.tar.gz" -o /tmp/trivy.tar.gz
-tar -xzf /tmp/trivy.tar.gz -C /tmp
-mv "/tmp/trivy_${VERSION}_Linux-${ARCHITECTURE}/trivy" /usr/local/bin/trivy
+tar -xzf /tmp/trivy.tar.gz -C /tmp trivy
+mv /tmp/trivy /usr/local/bin/trivy
 chmod 0755 /usr/local/bin/trivy
 
-rm -rf /tmp/trivy.tar.gz "/tmp/trivy_${VERSION}_Linux-${ARCHITECTURE}"
+rm -rf /tmp/trivy.tar.gz
