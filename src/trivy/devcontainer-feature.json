@@ -1,15 +1,15 @@
 {
-  "id": "tfsec",
-  "version": "1.0.2",
-  "name": "tfsec",
-  "documentationURL": "https://github.com/nikaro/features/tree/main/src/tfsec",
-  "description": "Install tfsec, a security scanner for Terraform code.",
+  "id": "trivy",
+  "version": "1.0.0",
+  "name": "trivy",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/trivy",
+  "description": "Install trivy, a vulnerability scanner for containers and other artifacts.",
   "options": {
     "version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
       "proposals": [
-        "3.6.0"
+        "0.42.1"
       ],
       "type": "string"
     }

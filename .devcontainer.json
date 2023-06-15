@@ -22,17 +22,17 @@
     }
   },
   "features": {
-    "ghcr.io/nikaro/devcontainer-features/actionlint": {},
-    "ghcr.io/nikaro/devcontainer-features/mkdir": {
+    "ghcr.io/nikaro/features/actionlint": {},
+    "ghcr.io/nikaro/features/mkdir": {
       "directories": "/home/vscode/.config",
       "owner": "vscode:vscode"
     },
-    "ghcr.io/nikaro/devcontainer-features/packages": {
+    "ghcr.io/nikaro/features/packages": {
       "packages": "curl,fish,git,jq,npm,vim"
     },
-    "ghcr.io/nikaro/devcontainer-features/github-cli": {},
-    "ghcr.io/nikaro/devcontainer-features/shellcheck": {},
-    "ghcr.io/nikaro/devcontainer-features/shfmt": {}
+    "ghcr.io/nikaro/features/github-cli": {},
+    "ghcr.io/nikaro/features/shellcheck": {},
+    "ghcr.io/nikaro/features/shfmt": {}
   },
   "updateContentCommand": {
     "devcontainer-cli": "sudo npm install -g @devcontainers/cli",
