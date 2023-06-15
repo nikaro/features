@@ -1,13 +1,13 @@
 
 # tfsec (tfsec)
 
-Install tfsec, a shell formatter.
+Install tfsec, a security scanner for Terraform code.
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/nikaro/devcontainer-features/tfsec:1": {}
+    "ghcr.io/nikaro/features/tfsec:1": {}
 }
 ```
 
@@ -21,11 +21,10 @@ Install tfsec, a shell formatter.
 
 ### VS Code Extensions
 
-- `foxundermoon.shell-format`
-- `mads-hartmann.bash-ide-vscode`
+- `hashicorp.terraform`
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/devcontainer-features/blob/main/src/tfsec/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/tfsec/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
