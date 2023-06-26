@@ -15,6 +15,7 @@ Python packaging and dependency management made easy.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
+| debug | Enable debug output. | boolean | false |
 | poetry_version | Version to install. If not specified, the latest version will be installed. | string | - |
 | poetry_home | Path to the poetry home directory. | string | /opt/poetry |
 
