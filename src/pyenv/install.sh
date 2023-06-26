@@ -47,8 +47,7 @@ if [ -z "${PYTHON_VERSION:-}" ]; then
   PYTHON_VERSION="$(pyenv install -l | grep -v 'dev\|a\|rc\|-' | tail -n 1 | xargs)"
 fi
 
-# install python
+# install python globally
 pyenv install "${PYTHON_VERSION}"
 pyenv global "${PYTHON_VERSION}"
-find "$(pyenv root)/versions/$(pyenv version | awk '{print $1}')/bin" -type f -exec ln -sf {} /usr/local/bin/ \;
-find "$(pyenv root)/versions/$(pyenv version | awk '{print $1}')/bin" -type l -exec ln -sf {} /usr/local/bin/ \;
+cp -rvf "$(pyenv root)/versions/$(pyenv version | awk '{print $1}')/"* /usr/local/
