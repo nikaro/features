@@ -2,7 +2,7 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-if [ -z "${DEBUG:-}" ]; then
+if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
 fi
 
@@ -32,5 +32,7 @@ if [ -z "${POETRY_HOME:-}" ]; then
 fi
 export POETRY_HOME
 
-curl -sSL https://install.python-poetry.org | python3 -
+python3 -m venv "${POETRY_HOME}"
+"${POETRY_HOME}/bin/pip" install --upgrade pip setuptools wheel
+"${POETRY_HOME}/bin/pip" install "poetry==${POETRY_VERSION}"
 ln -sf "${POETRY_HOME}/bin/poetry" /usr/local/bin/poetry
