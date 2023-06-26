@@ -1,10 +1,15 @@
 {
   "id": "poetry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "poetry",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/poetry",
   "description": "Python packaging and dependency management made easy.",
   "options": {
+    "debug": {
+      "default": false,
+      "description": "Enable debug output.",
+      "type": "boolean"
+    },
     "poetry_version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",

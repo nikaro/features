@@ -2,7 +2,7 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-if [ "${1:-}" = "DEBUG" ]; then
+if [ -z "${DEBUG:-}" ]; then
   set -o xtrace
 fi
 
