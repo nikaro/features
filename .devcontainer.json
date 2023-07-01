@@ -1,5 +1,5 @@
 {
-  "name": "devcontainer-features",
+  "name": "features",
   "image": "mcr.microsoft.com/devcontainers/base:alpine",
   "customizations": {
     "vscode": {
@@ -39,10 +39,30 @@
     "gh-poi": "gh extension install seachicken/gh-poi"
   },
   "mounts": [
-    "source=${localEnv:HOME}/.config/fish,target=/home/vscode/.config/fish,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/.config/gh,target=/home/vscode/.config/gh,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/.config/git,target=/home/vscode/.config/git,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/.config/gcloud,target=/home/vscode/.config/gcloud,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    {
+      "source": "${localEnv:HOME}/.config/fish",
+      "target": "/home/vscode/.config/fish",
+      "type": "bind"
+    },
+    {
+      "source": "${localEnv:HOME}/.config/git",
+      "target": "/home/vscode/.config/git",
+      "type": "bind"
+    },
+    {
+      "source": "${localEnv:HOME}/.config/gh",
+      "target": "/home/vscode/.config/gh",
+      "type": "bind"
+    },
+    {
+      "source": "${localEnv:HOME}/.config/gcloud",
+      "target": "/home/vscode/.config/gcloud",
+      "type": "bind"
+    },
+    {
+      "source": "${localEnv:HOME}/.ssh",
+      "target": "/home/vscode/.ssh",
+      "type": "bind"
+    }
   ]
 }
