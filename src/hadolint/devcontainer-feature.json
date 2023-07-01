@@ -1,6 +1,6 @@
 {
   "id": "hadolint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "hadolint",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/hadolint",
   "description": "Dockerfile linter, validate inline bash, written in Haskell.",
