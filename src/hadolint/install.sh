@@ -24,5 +24,5 @@ aarch64 | armv8* | arm64)
     ;;
 esac
 
-curl -sSL "https://github.com/hadolint/hadolint/releases/download/v${VERSION}/hadolint-Linux-${VERSION}-${ARCHITECTURE}" -o /usr/local/bin/hadolint
+curl -sSL "https://github.com/hadolint/hadolint/releases/download/v${VERSION}/hadolint-Linux-${ARCHITECTURE}" -o /usr/local/bin/hadolint
 chmod 0755 /usr/local/bin/hadolint
