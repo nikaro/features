@@ -1,0 +1,28 @@
+{
+  "id": "hadolint",
+  "version": "1.0.0",
+  "name": "hadolint",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/hadolint",
+  "description": "Dockerfile linter, validate inline bash, written in Haskell.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "2.12.0"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "exiasr.hadolint",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages"
+  ]
+}
