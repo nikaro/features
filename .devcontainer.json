@@ -1,6 +1,6 @@
 {
   "name": "features",
-  "image": "mcr.microsoft.com/devcontainers/base:alpine",
+  "image": "ghcr.io/nikaro/alpine-devcontainer:latest",
   "customizations": {
     "vscode": {
       "settings": {
@@ -11,9 +11,7 @@
             ],
             "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
           }
-        ],
-        "terminal.integrated.defaultProfile.linux": "fish",
-        "terminal.integrated.defaultProfile.osx": "fish"
+        ]
       },
       "extensions": [
         "EditorConfig.EditorConfig",
@@ -23,19 +21,15 @@
   },
   "features": {
     "ghcr.io/nikaro/features/actionlint": {},
-    "ghcr.io/nikaro/features/mkdir": {
-      "directories": "/home/vscode/.config",
-      "owner": "vscode:vscode"
-    },
     "ghcr.io/nikaro/features/packages": {
-      "packages": "curl,fish,git,jq,npm,vim"
+      "packages": "npm,python3"
     },
     "ghcr.io/nikaro/features/github-cli": {},
     "ghcr.io/nikaro/features/shellcheck": {},
     "ghcr.io/nikaro/features/shfmt": {}
   },
   "updateContentCommand": {
-    "devcontainer-cli": "sudo npm install -g @devcontainers/cli",
+    "devcontainer-cli": "doas npm install -g @devcontainers/cli",
     "gh-poi": "gh extension install seachicken/gh-poi"
   },
   "mounts": [
@@ -52,11 +46,6 @@
     {
       "source": "${localEnv:HOME}/.config/gh",
       "target": "/home/vscode/.config/gh",
-      "type": "bind"
-    },
-    {
-      "source": "${localEnv:HOME}/.config/gcloud",
-      "target": "/home/vscode/.config/gcloud",
       "type": "bind"
     },
     {
