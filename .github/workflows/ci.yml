@@ -21,10 +21,10 @@ jobs:
       contents: read
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Validate devcontainer-feature.json files
-        uses: devcontainers/action@v1
+        uses: devcontainers/action@3f8cae6bc8e5ef6d58062d7c5cc471d81e8ded05 # v1
         with:
           validate-only: true
           base-path-to-features: ./src
@@ -36,7 +36,7 @@ jobs:
       contents: read
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
       - name: Install latest devcontainer CLI
         run: npm install -g @devcontainers/cli
