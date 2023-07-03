@@ -5,7 +5,7 @@ set -o nounset # Exit on uninitialized variable
 
 # get latest version
 if [ -z "${VERSION:-}" ]; then
-    VERSION="$(curl -s https://api.github.com/repos/mozilla/sops/releases/latest | jq -r '.tag_name' | sed 's/v//')"
+    VERSION="$(curl -s https://api.github.com/repos/getsops/sops/releases/latest | jq -r '.tag_name' | sed 's/v//')"
 fi
 
 case "$(uname -m)" in
@@ -21,5 +21,5 @@ aarch64 | armv8* | arm64)
     ;;
 esac
 
-curl -sSL "https://github.com/mozilla/sops/releases/download/v${VERSION}/sops-v${VERSION}.linux.${ARCHITECTURE}" -o /usr/local/bin/sops
+curl -sSL "https://github.com/getsops/sops/releases/download/v${VERSION}/sops-v${VERSION}.linux.${ARCHITECTURE}" -o /usr/local/bin/sops
 chmod 0755 /usr/local/bin/sops

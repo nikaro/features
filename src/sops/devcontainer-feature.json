@@ -1,6 +1,6 @@
 {
   "id": "sops",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "sops",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/sops",
   "description": "Simple and flexible tool for managing secrets.",
