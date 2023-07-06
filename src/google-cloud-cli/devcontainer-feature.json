@@ -1,6 +1,6 @@
 {
   "id": "google-cloud-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "google-cloud-cli",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/google-cloud-cli",
   "description": "Google Cloud CLI.",
@@ -57,6 +57,7 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/nikaro/features/packages"
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/pyenv"
   ]
 }
