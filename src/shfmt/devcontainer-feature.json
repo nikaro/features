@@ -1,6 +1,6 @@
 {
   "id": "shfmt",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": "shfmt",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/shfmt",
   "description": "Install shfmt, a shell formatter.",
@@ -19,7 +19,11 @@
       "extensions": [
         "foxundermoon.shell-format",
         "mads-hartmann.bash-ide-vscode"
-      ]
+      ],
+      "settings": {
+        "shellformat.path": "/usr/local/bin/shfmt",
+        "shellformat.useEditorConfig": true
+      }
     }
   },
   "installsAfter": [
