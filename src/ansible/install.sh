@@ -62,6 +62,22 @@ python3 -m venv "${VENV_PATH}"
 "${VENV_PATH}/bin/pip" install --upgrade pip setuptools wheel
 "${VENV_PATH}/bin/pip" install "ansible==${VERSION}"
 
+# postCreateCommand script path
+POST_CREATE_COMMAND_SCRIPT_PATH="/usr/local/share/feature-ansible-post-create.sh"
+
+tee "$POST_CREATE_COMMAND_SCRIPT_PATH" > /dev/null \
+<< EOF
+#!/usr/bin/env sh
+
+set -o errexit # Exit on error
+set -o nounset # Exit on uninitialized variable
+
+DEPENDENCIES=${DEPENDENCIES}
+EOF
+
+tee -a "$POST_CREATE_COMMAND_SCRIPT_PATH" > /dev/null \
+<< 'EOF'
+
 # install dependencies
 if [ -n "${DEPENDENCIES:-}" ]; then
   # ensure packages are separated by spaces
@@ -75,3 +91,6 @@ fi
 for bin in "${VENV_PATH}"/bin/ansible*; do
   ln -sf "${bin}" /usr/local/bin/
 done
+EOF
+
+chmod 755 "$POST_CREATE_COMMAND_SCRIPT_PATH"

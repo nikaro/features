@@ -1,6 +1,6 @@
 {
   "id": "ansible",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "name": "ansible",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/ansible",
   "description": "Ansible is an open source community project sponsored by Red Hat, it's the simplest way to automate IT.",
@@ -45,7 +45,5 @@
     "ghcr.io/nikaro/features/packages",
     "ghcr.io/nikaro/features/pyenv"
   ],
-  "mounts": [
-    { "source": "${localWorkspaceFolder}", "target": "/repo", "type": "bind" }
-  ]
+  "postCreateCommand": "/usr/local/share/feature-ansible-post-create.sh"
 }
