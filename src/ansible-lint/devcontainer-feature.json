@@ -1,0 +1,43 @@
+{
+  "id": "ansible-lint",
+  "version": "1.0.0",
+  "name": "ansible-lint",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/ansible-lint",
+  "description": "Linter for Ansible.",
+  "options": {
+    "debug": {
+      "default": false,
+      "description": "Enable debug output.",
+      "type": "boolean"
+    },
+    "ansible_lint_version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": [
+        "6.22.2"
+      ],
+      "type": "string"
+    },
+    "ansible_lint_home": {
+      "default": "/opt/ansible-lint",
+      "description": "Path to the ansible-lint home directory.",
+      "proposals": [
+        "/usr/local/ansible-lint"
+      ],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.ansible"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/python",
+    "ghcr.io/nikaro/features/ansible",
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/pyenv"
+  ]
+}
