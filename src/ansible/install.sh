@@ -30,12 +30,10 @@ if [ -z "${ANSIBLE_HOME:-}" ]; then
   ANSIBLE_HOME=/opt/ansible
 fi
 
+# install ansible
 python3 -m venv "${ANSIBLE_HOME}"
 "${ANSIBLE_HOME}/bin/pip" install --upgrade pip setuptools wheel
 "${ANSIBLE_HOME}/bin/pip" install "ansible==${ANSIBLE_VERSION}"
-for bin in "${ANSIBLE_HOME}"/bin/ansible*; do
-  ln -sf "${bin}" /usr/local/bin/
-done
 
 # set install path
 if [ -n "${ANSIBLE_DEPENDENCIES:-}" ]; then
@@ -43,3 +41,8 @@ if [ -n "${ANSIBLE_DEPENDENCIES:-}" ]; then
   ANSIBLE_DEPENDENCIES=$(printf '%s' "$ANSIBLE_DEPENDENCIES" | tr ',' ' ')
   "${ANSIBLE_HOME}/bin/pip" install $ANSIBLE_DEPENDENCIES
 fi
+
+# link ansible binaries into PATH
+for bin in "${ANSIBLE_HOME}"/bin/ansible*; do
+  ln -sf "${bin}" /usr/local/bin/
+done
