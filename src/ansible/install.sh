@@ -84,13 +84,13 @@ if [ -n "${DEPENDENCIES:-}" ]; then
   # ensure packages are separated by spaces
   DEPENDENCIES=$(printf '%s' "$DEPENDENCIES" | tr ',' ' ')
   for package in $DEPENDENCIES; do
-    "${VENV_PATH}/bin/pip" install "$package"
+    sudo "${VENV_PATH}/bin/pip" install "$package"
   done
 fi
 
 # link ansible binaries into PATH
 for bin in "${VENV_PATH}"/bin/ansible*; do
-  ln -sf "${bin}" /usr/local/bin/
+  sudo ln -sf "${bin}" /usr/local/bin/
 done
 EOF
 
