@@ -10,36 +10,28 @@
       "description": "Enable debug output.",
       "type": "boolean"
     },
-    "ansible_version": {
+    "version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
-      "proposals": [
-        "9.1.0"
-      ],
+      "proposals": ["9.1.0"],
       "type": "string"
     },
-    "ansible_home": {
+    "venv_path": {
       "default": "/opt/ansible",
       "description": "Path to the ansible home directory.",
-      "proposals": [
-        "/usr/local/ansible"
-      ],
+      "proposals": ["/usr/local/ansible"],
       "type": "string"
     },
-    "ansible_dependencies": {
+    "dependencies": {
       "default": "",
       "description": "Additionnal dependencies to install in the virtualenv.",
-      "proposals": [
-        "ansible-lint,requests"
-      ],
+      "proposals": ["ansible-lint,requests"],
       "type": "string"
     }
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "redhat.ansible"
-      ]
+      "extensions": ["redhat.ansible"]
     }
   },
   "installsAfter": [

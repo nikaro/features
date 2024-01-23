@@ -21,28 +21,28 @@ command -v python3 >/dev/null 2>&1 || {
 }
 
 # get latest version
-if [ -z "${ANSIBLE_VERSION:-}" ]; then
-  ANSIBLE_VERSION="$(curl -s https://api.github.com/repos/ansible-community/ansible-build-data/tags | jq -r '.[0].name')"
+if [ -z "${VERSION:-}" ]; then
+  VERSION="$(curl -s https://api.github.com/repos/ansible-community/ansible-build-data/tags | jq -r '.[0].name')"
 fi
 
 # set install path
-if [ -z "${ANSIBLE_HOME:-}" ]; then
-  ANSIBLE_HOME=/opt/ansible
+if [ -z "${VENV_PATH:-}" ]; then
+  VENV_PATH=/opt/ansible
 fi
 
 # install ansible
-python3 -m venv "${ANSIBLE_HOME}"
-"${ANSIBLE_HOME}/bin/pip" install --upgrade pip setuptools wheel
-"${ANSIBLE_HOME}/bin/pip" install "ansible==${ANSIBLE_VERSION}"
+python3 -m venv "${VENV_PATH}"
+"${VENV_PATH}/bin/pip" install --upgrade pip setuptools wheel
+"${VENV_PATH}/bin/pip" install "ansible==${VERSION}"
 
 # set install path
-if [ -n "${ANSIBLE_DEPENDENCIES:-}" ]; then
+if [ -n "${DEPENDENCIES:-}" ]; then
   # ensure packages are separated by spaces
-  ANSIBLE_DEPENDENCIES=$(printf '%s' "$ANSIBLE_DEPENDENCIES" | tr ',' ' ')
-  "${ANSIBLE_HOME}/bin/pip" install $ANSIBLE_DEPENDENCIES
+  DEPENDENCIES=$(printf '%s' "$DEPENDENCIES" | tr ',' ' ')
+  "${VENV_PATH}/bin/pip" install $DEPENDENCIES
 fi
 
 # link ansible binaries into PATH
-for bin in "${ANSIBLE_HOME}"/bin/ansible*; do
+for bin in "${VENV_PATH}"/bin/ansible*; do
   ln -sf "${bin}" /usr/local/bin/
 done
