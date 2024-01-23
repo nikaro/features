@@ -6,6 +6,33 @@ if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
 fi
 
+# install requirements
+if [ -n "${REQUIREMENTS:-}" ]; then
+  # ensure packages are separated by spaces
+  REQUIREMENTS=$(printf '%s' "$REQUIREMENTS" | tr ',' ' ')
+  for package in $REQUIREMENTS; do
+    # determine distribution package manager
+    if command -v apk >/dev/null 2>&1; then
+      apk add --no-cache "$package"
+    elif command -v apt-get >/dev/null 2>&1; then
+      apt-get update
+      apt-get install -y "$package"
+    elif command -v dnf >/dev/null 2>&1; then
+      dnf install -y "$package"
+    elif command -v pacman >/dev/null 2>&1; then
+      pacman -Syu "$package"
+    elif command -v yum >/dev/null 2>&1; then
+      yum install -y "$package"
+    elif command -v zypper >/dev/null 2>&1; then
+      zypper install -y "$package"
+    else
+      echo "Unsupported package manager, requirements installation failed"
+      exit 1
+    fi
+  done
+fi
+
+
 # check requirements
 command -v curl >/dev/null 2>&1 || {
   echo >&2 "curl is required but not installed. Aborting."
@@ -35,11 +62,13 @@ python3 -m venv "${VENV_PATH}"
 "${VENV_PATH}/bin/pip" install --upgrade pip setuptools wheel
 "${VENV_PATH}/bin/pip" install "ansible==${VERSION}"
 
-# set install path
+# install dependencies
 if [ -n "${DEPENDENCIES:-}" ]; then
   # ensure packages are separated by spaces
   DEPENDENCIES=$(printf '%s' "$DEPENDENCIES" | tr ',' ' ')
-  "${VENV_PATH}/bin/pip" install $DEPENDENCIES
+  for package in $DEPENDENCIES; do
+    "${VENV_PATH}/bin/pip" install "$package"
+  done
 fi
 
 # link ansible binaries into PATH
