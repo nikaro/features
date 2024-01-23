@@ -24,13 +24,11 @@ command -v python3 >/dev/null 2>&1 || {
 if [ -z "${ANSIBLE_VERSION:-}" ]; then
   ANSIBLE_VERSION="$(curl -s https://api.github.com/repos/ansible-community/ansible-build-data/tags | jq -r '.[0].name')"
 fi
-export ANSIBLE_VERSION
 
 # set install path
 if [ -z "${ANSIBLE_HOME:-}" ]; then
   ANSIBLE_HOME=/opt/ansible
 fi
-export ANSIBLE_HOME
 
 python3 -m venv "${ANSIBLE_HOME}"
 "${ANSIBLE_HOME}/bin/pip" install --upgrade pip setuptools wheel
@@ -38,3 +36,10 @@ python3 -m venv "${ANSIBLE_HOME}"
 for bin in "${ANSIBLE_HOME}"/bin/ansible*; do
   ln -sf "${bin}" /usr/local/bin/
 done
+
+# set install path
+if [ -n "${ANSIBLE_DEPENDENCIES:-}" ]; then
+  # ensure packages are separated by spaces
+  ANSIBLE_DEPENDENCIES=$(printf '%s' "$ANSIBLE_DEPENDENCIES" | tr ',' ' ')
+  "${ANSIBLE_HOME}/bin/pip" install $ANSIBLE_DEPENDENCIES
+fi
