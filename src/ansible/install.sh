@@ -72,6 +72,7 @@ tee "$POST_CREATE_COMMAND_SCRIPT_PATH" > /dev/null \
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
 
+VENV_PATH=${VENV_PATH}
 DEPENDENCIES=${DEPENDENCIES}
 EOF
 

@@ -1,6 +1,6 @@
 {
   "id": "ansible",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "name": "ansible",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/ansible",
   "description": "Ansible is an open source community project sponsored by Red Hat, it's the simplest way to automate IT.",
