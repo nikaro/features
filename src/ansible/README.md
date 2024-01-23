@@ -18,7 +18,8 @@ Ansible is an open source community project sponsored by Red Hat, it's the simpl
 | debug | Enable debug output. | boolean | false |
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
 | venv_path | Path to the ansible home directory. | string | /opt/ansible |
-| dependencies | Additionnal dependencies to install in the virtualenv. | string | - |
+| requirements | Required distribution packages. | string | curl,jq,libffi-dev,python3-venv |
+| dependencies | Additional dependencies to install in the virtualenv. | string | - |
 
 ## Customizations
 
