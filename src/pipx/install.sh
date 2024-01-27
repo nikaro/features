@@ -13,7 +13,9 @@ fi
 ensure_nanolayer
 
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/python"
+set +o errexit
 . /etc/profile
+set -o errexit
 
 # set options
 PIPX_HOME="${PIPX_HOME:-"/opt/pipx"}"

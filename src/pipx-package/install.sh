@@ -12,7 +12,9 @@ fi
 ensure_nanolayer
 
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pipx"
+set +o errexit
 . /etc/profile
+set -o errexit
 
 VERSION=${VERSION:-"latest"}
 INJECTIONS=${INJECTIONS:-""}
