@@ -32,7 +32,6 @@ if [ -n "${REQUIREMENTS:-}" ]; then
   done
 fi
 
-
 # check requirements
 command -v curl >/dev/null 2>&1 || {
   echo >&2 "curl is required but not installed. Aborting."
@@ -65,8 +64,8 @@ python3 -m venv "${VENV_PATH}"
 # postCreateCommand script path
 POST_CREATE_COMMAND_SCRIPT_PATH="/usr/local/share/feature-ansible-post-create.sh"
 
-tee "$POST_CREATE_COMMAND_SCRIPT_PATH" > /dev/null \
-<< EOF
+tee "$POST_CREATE_COMMAND_SCRIPT_PATH" >/dev/null \
+  <<EOF
 #!/usr/bin/env sh
 
 set -o errexit # Exit on error
@@ -76,8 +75,8 @@ VENV_PATH=${VENV_PATH}
 DEPENDENCIES=${DEPENDENCIES}
 EOF
 
-tee -a "$POST_CREATE_COMMAND_SCRIPT_PATH" > /dev/null \
-<< 'EOF'
+tee -a "$POST_CREATE_COMMAND_SCRIPT_PATH" >/dev/null \
+  <<'EOF'
 
 # install dependencies
 if [ -n "${DEPENDENCIES:-}" ]; then

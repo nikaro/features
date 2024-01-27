@@ -8,9 +8,7 @@
     "version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
-      "proposals": [
-        "2.29.0"
-      ],
+      "proposals": ["2.29.0"],
       "type": "string"
     }
   },
@@ -22,7 +20,5 @@
       ]
     }
   },
-  "installsAfter": [
-    "ghcr.io/nikaro/features/packages"
-  ]
+  "installsAfter": ["ghcr.io/nikaro/features/packages"]
 }

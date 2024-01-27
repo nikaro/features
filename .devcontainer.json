@@ -3,34 +3,28 @@
   "image": "ghcr.io/nikaro/alpine-devcontainer:latest",
   "customizations": {
     "vscode": {
-      "settings": {
-        "json.schemas": [
-          {
-            "fileMatch": [
-              "*/devcontainer-feature.json"
-            ],
-            "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
-          }
-        ]
-      },
       "extensions": [
         "EditorConfig.EditorConfig",
-        "GitHub.copilot"
+        "esbenp.prettier-vscode",
+        "foxundermoon.shell-format",
+        "GitHub.copilot",
+        "github.vscode-github-actions",
+        "mads-hartmann.bash-ide-vscode",
+        "redhat.vscode-yaml"
       ]
     }
   },
   "features": {
     "ghcr.io/nikaro/features/actionlint": {},
     "ghcr.io/nikaro/features/packages": {
-      "packages": "npm,python3"
+      "packages": "npm"
     },
-    "ghcr.io/nikaro/features/github-cli": {},
+    "ghcr.io/nikaro/features/python": {},
     "ghcr.io/nikaro/features/shellcheck": {},
     "ghcr.io/nikaro/features/shfmt": {}
   },
   "updateContentCommand": {
-    "devcontainer-cli": "doas npm install -g @devcontainers/cli",
-    "gh-poi": "gh extension install seachicken/gh-poi"
+    "devcontainer-cli": "doas npm install -g @devcontainers/cli"
   },
   "mounts": [
     {
@@ -41,16 +35,6 @@
     {
       "source": "${localEnv:HOME}/.config/git",
       "target": "/home/vscode/.config/git",
-      "type": "bind"
-    },
-    {
-      "source": "${localEnv:HOME}/.config/gh",
-      "target": "/home/vscode/.config/gh",
-      "type": "bind"
-    },
-    {
-      "source": "${localEnv:HOME}/.ssh",
-      "target": "/home/vscode/.ssh",
       "type": "bind"
     }
   ]

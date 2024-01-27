@@ -18,18 +18,13 @@
     "owner": {
       "default": "",
       "description": "Directories owner.",
-      "proposals": [
-        "1000:1000"
-      ],
+      "proposals": ["1000:1000"],
       "type": "string"
     },
     "permissions": {
       "default": "",
       "description": "Directories permissions.",
-      "proposals": [
-        "750",
-        "u=rwx,g=rx,o=rwx"
-      ],
+      "proposals": ["750", "u=rwx,g=rx,o=rwx"],
       "type": "string"
     }
   },

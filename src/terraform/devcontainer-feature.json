@@ -8,20 +8,14 @@
     "version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
-      "proposals": [
-        "1.4.6"
-      ],
+      "proposals": ["1.4.6"],
       "type": "string"
     }
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "hashicorp.terraform"
-      ]
+      "extensions": ["hashicorp.terraform"]
     }
   },
-  "installsAfter": [
-    "ghcr.io/nikaro/features/packages"
-  ]
+  "installsAfter": ["ghcr.io/nikaro/features/packages"]
 }

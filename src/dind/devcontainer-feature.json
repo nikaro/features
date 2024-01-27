@@ -8,25 +8,19 @@
     "version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
-      "proposals": [
-        "23.0.6"
-      ],
+      "proposals": ["23.0.6"],
       "type": "string"
     },
     "buildx_version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
-      "proposals": [
-        "0.10.4"
-      ],
+      "proposals": ["0.10.4"],
       "type": "string"
     },
     "compose_version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
-      "proposals": [
-        "2.18.1"
-      ],
+      "proposals": ["2.18.1"],
       "type": "string"
     },
     "username": {
@@ -37,14 +31,10 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "ms-azuretools.vscode-docker"
-      ]
+      "extensions": ["ms-azuretools.vscode-docker"]
     }
   },
-  "installsAfter": [
-    "ghcr.io/nikaro/features/packages"
-  ],
+  "installsAfter": ["ghcr.io/nikaro/features/packages"],
   "entrypoint": "/dockerd-entrypoint.sh",
   "privileged": true,
   "containerEnv": {

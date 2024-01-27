@@ -1,0 +1,37 @@
+{
+  "id": "pipx-package",
+  "name": "pipx-package",
+  "version": "1.0.0",
+  "description": "Installs a pipx package.",
+  "documentationURL": "http://github.com/nikaro/features/tree/main/src/pipx-package",
+  "options": {
+    "package": {
+      "type": "string",
+      "proposals": ["ruff"],
+      "default": "",
+      "description": "Select the pipx package to install."
+    },
+    "version": {
+      "type": "string",
+      "proposals": ["latest"],
+      "default": "latest",
+      "description": "Select the version of the pipx package to install."
+    },
+    "injections": {
+      "type": "string",
+      "proposals": ["pylint pytest"],
+      "default": "",
+      "description": "Space delimitered list of python packages to inject into the main package env"
+    },
+    "includeDeps": {
+      "default": false,
+      "description": "Include apps of dependent packages",
+      "type": "boolean"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/pipx",
+    "ghcr.io/nikaro/features/python"
+  ]
+}

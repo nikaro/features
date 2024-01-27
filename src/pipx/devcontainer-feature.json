@@ -1,0 +1,19 @@
+{
+  "id": "pipx",
+  "name": "pipx",
+  "version": "1.0.0",
+  "description": "Installs a pipx package.",
+  "documentationURL": "http://github.com/nikaro/features/tree/main/src/pipx",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": ["latest"],
+      "default": "latest",
+      "description": "Select the version of pipx to install."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/python"
+  ]
+}

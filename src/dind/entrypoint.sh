@@ -3,7 +3,8 @@
 
 set -e
 
-dockerd_start="$(cat << 'INNEREOF'
+dockerd_start="$(
+  cat <<'INNEREOF'
     # explicitly remove dockerd and containerd PID file to ensure that it can start properly if it was stopped uncleanly
     # ie: docker kill <ID>
     find /run /var/run -iname 'docker*.pid' -delete || :
@@ -42,9 +43,9 @@ INNEREOF
 
 # Start using sudo if not invoked as root
 if [ "$(id -u)" -ne 0 ]; then
-    sudo /bin/sh -c "${dockerd_start}"
+  sudo /bin/sh -c "${dockerd_start}"
 else
-    eval "${dockerd_start}"
+  eval "${dockerd_start}"
 fi
 
 set +e

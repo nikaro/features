@@ -8,43 +8,31 @@
     "version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
-      "proposals": [
-        "430.0.0"
-      ],
+      "proposals": ["430.0.0"],
       "type": "string"
     },
     "telemetry": {
       "default": "false",
       "description": "Enable anonymous usage reporting.",
-      "proposals": [
-        "true",
-        "false"
-      ],
+      "proposals": ["true", "false"],
       "type": "string"
     },
     "rc-path": {
       "default": "",
       "description": "Profile to update with PATH and completion.",
-      "proposals": [
-        "/etc/profile.d/90-gcloud.sh"
-      ],
+      "proposals": ["/etc/profile.d/90-gcloud.sh"],
       "type": "string"
     },
     "override-components": {
       "default": "",
       "description": "Override the components that would be installed by default and install these instead.",
-      "proposals": [
-        "/etc/profile.d/90-gcloud.sh"
-      ],
+      "proposals": ["/etc/profile.d/90-gcloud.sh"],
       "type": "string"
     },
     "additional-components": {
       "default": "",
       "description": "Additional components to install by default.",
-      "proposals": [
-        "core",
-        "core gsutil bq"
-      ],
+      "proposals": ["core", "core gsutil bq"],
       "type": "string"
     }
   },

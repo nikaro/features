@@ -8,21 +8,14 @@
     "version": {
       "default": "",
       "description": "Version to install. If not specified, the latest version will be installed.",
-      "proposals": [
-        "2.12.0"
-      ],
+      "proposals": ["2.12.0"],
       "type": "string"
     }
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "exiasr.hadolint",
-        "ms-azuretools.vscode-docker"
-      ]
+      "extensions": ["exiasr.hadolint", "ms-azuretools.vscode-docker"]
     }
   },
-  "installsAfter": [
-    "ghcr.io/nikaro/features/packages"
-  ]
+  "installsAfter": ["ghcr.io/nikaro/features/packages"]
 }

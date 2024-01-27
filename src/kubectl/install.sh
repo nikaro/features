@@ -5,20 +5,20 @@ set -o nounset # Exit on uninitialized variable
 
 # get latest version
 if [ -z "${VERSION:-}" ]; then
-    VERSION="$(curl -sSL https://dl.k8s.io/release/stable.txt | sed 's/v//')"
+  VERSION="$(curl -sSL https://dl.k8s.io/release/stable.txt | sed 's/v//')"
 fi
 
 case "$(uname -m)" in
 x86_64)
-    ARCHITECTURE="amd64"
-    ;;
+  ARCHITECTURE="amd64"
+  ;;
 aarch64 | armv8* | arm64)
-    ARCHITECTURE="arm64"
-    ;;
+  ARCHITECTURE="arm64"
+  ;;
 *)
-    echo "Architecture unsupported"
-    exit 1
-    ;;
+  echo "Architecture unsupported"
+  exit 1
+  ;;
 esac
 
 curl -sSL "https://dl.k8s.io/release/v${VERSION}/bin/linux/${ARCHITECTURE}/kubectl" -o /usr/local/bin/kubectl

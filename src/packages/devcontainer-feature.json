@@ -1,6 +1,6 @@
 {
   "id": "packages",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "packages",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/packages",
   "description": "Install packages from distribution package manager.",
@@ -8,9 +8,7 @@
     "packages": {
       "default": "",
       "description": "Space or comma separated list of packages.",
-      "proposals": [
-        "curl,git"
-      ],
+      "proposals": ["curl,git"],
       "type": "string"
     }
   },

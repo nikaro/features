@@ -1,0 +1,19 @@
+{
+  "id": "python",
+  "version": "1.0.0",
+  "name": "python",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/python",
+  "description": "Python installation.",
+  "options": {
+    "python_version": {
+      "default": "",
+      "description": "Python version to install. Defaults to the latest version available.",
+      "proposals": ["3.11", "3.9.6"],
+      "type": "string"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/pyenv"
+  ]
+}
