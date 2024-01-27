@@ -2,19 +2,16 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-if [ "${1:-}" = "DEBUG" ]; then
+if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
 fi
 
-# check requirements
-command -v curl >/dev/null 2>&1 || {
-  echo >&2 "curl is required but not installed. Aborting."
-  exit 1
-}
-command -v jq >/dev/null 2>&1 || {
-  echo >&2 "jq is required but not installed. Aborting."
-  exit 1
-}
+# shellcheck source=library_scripts.sh
+. ./library_scripts.sh
+
+# install requirements
+pkg_install curl
+pkg_install jq
 
 # get latest version
 if [ -z "${VERSION:-}" ]; then
@@ -30,8 +27,7 @@ aarch64 | armv8* | arm64)
   ARCHITECTURE="arm64"
   ;;
 *)
-  echo "Architecture unsupported"
-  exit 1
+  err "Architecture unsupported"
   ;;
 esac
 
@@ -40,8 +36,7 @@ if ldd --version | grep -q musl; then
   URL="https://unofficial-builds.nodejs.org/download/release/v${VERSION}/node-v${VERSION}-linux-${ARCHITECTURE}-musl.tar.xz"
   # arm64 is not yet supported for musl
   if [ "${ARCHITECTURE}" = "arm64" ]; then
-    echo "arm64-musl unsupported"
-    exit 1
+    err "arm64-musl unsupported"
   fi
 else
   URL="https://nodejs.org/dist/v${VERSION}/node-v${VERSION}-linux-${ARCHITECTURE}.tar.xz"
@@ -56,3 +51,7 @@ ln -sf "/opt/node-v${VERSION}-linux-${ARCHITECTURE}/bin/npx" /usr/local/bin/npx
 
 # cleanup
 rm -rf /tmp/node.tar.xz
+
+# remove installed requirements
+pkg_remove curl
+pkg_remove jq
