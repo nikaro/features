@@ -1,7 +1,7 @@
 {
   "id": "pyenv",
   "name": "pyenv",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/pyenv",
   "description": "Simple Python version management.",
   "options": {
@@ -16,6 +16,11 @@
       "description": "Path to the poetry home directory.",
       "proposals": ["/usr/local/pyenv"],
       "type": "string"
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
     }
   },
   "installsAfter": ["ghcr.io/nikaro/features/packages"]

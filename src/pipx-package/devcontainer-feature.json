@@ -1,7 +1,7 @@
 {
   "id": "pipx-package",
   "name": "pipx-package",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Installs a pipx package.",
   "documentationURL": "http://github.com/nikaro/features/tree/main/src/pipx-package",
   "options": {
@@ -26,6 +26,11 @@
     "includeDeps": {
       "default": false,
       "description": "Include apps of dependent packages",
+      "type": "boolean"
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
       "type": "boolean"
     }
   },

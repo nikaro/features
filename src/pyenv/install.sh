@@ -3,10 +3,8 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-if [ -n "${DEBUG:-}" ]; then
+if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
-  PYENV_DEBUG=1
-  export PYENV_DEBUG
 fi
 
 # shellcheck source=library_scripts.sh

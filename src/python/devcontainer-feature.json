@@ -1,7 +1,7 @@
 {
   "id": "python",
   "name": "python",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/python",
   "description": "Python installation.",
   "options": {
@@ -10,6 +10,11 @@
       "description": "Python version to install. Defaults to the latest version available.",
       "proposals": ["3.11", "3.9.6"],
       "type": "string"
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
     }
   },
   "installsAfter": [
