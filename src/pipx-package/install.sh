@@ -30,11 +30,11 @@ if ! pipx list --short | grep -q "$PACKAGE"; then
   # install main package
   verbose=$(if [ "$DEBUG" = "true" ]; then echo --verbose; fi)
   include_deps_cmd=$(if [ "$INCLUDEDEPS" = "true" ]; then echo --include-deps; fi)
-  pipx install --pip-args '--no-cache-dir' "$include_deps_cmd" "$verbose" "$pipx_installation"
+  pipx install --pip-args="--no-cache-dir" "$include_deps_cmd" "$verbose" "$pipx_installation"
 
   # install injections (if provided)
   for injection in $INJECTIONS; do
-    pipx inject "$PACKAGE" --pip-args '--no-cache-dir' "$injection"
+    pipx inject "$PACKAGE" --pip-args="--no-cache-dir" "$injection"
   done
 
   # configure permissions
