@@ -14,6 +14,6 @@ ensure_nanolayer
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pipx-package" \
   --option package="pre-commit" \
   --option version="${VERSION:-}" \
-  --option verbose="${DEBUG:-}"
+  --option debug="${DEBUG:-}"
 
 remove_nanolayer
