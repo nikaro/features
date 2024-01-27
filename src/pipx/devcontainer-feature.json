@@ -1,7 +1,7 @@
 {
   "id": "pipx",
   "name": "pipx",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "Installs a pipx package.",
   "documentationURL": "http://github.com/nikaro/features/tree/main/src/pipx",
   "options": {
@@ -10,6 +10,21 @@
       "proposals": ["latest"],
       "default": "latest",
       "description": "Select the version of pipx to install."
+    },
+    "pipx_home": {
+      "type": "string",
+      "default": "/opt/pipx",
+      "description": "The directory to install pipx packages."
+    },
+    "pipx_bin_dir": {
+      "type": "string",
+      "default": "/usr/local/bin",
+      "description": "The directory to install pipx binaries."
+    },
+    "pipx_man_dir": {
+      "type": "string",
+      "default": "/usr/local/share/man",
+      "description": "The directory to install pipx manpages."
     },
     "debug": {
       "default": false,

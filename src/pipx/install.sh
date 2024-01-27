@@ -18,7 +18,9 @@ set +o errexit
 set -o errexit
 
 # set options
-PIPX_HOME="${PIPX_HOME:-"/opt/pipx"}"
+PIPX_HOME="${PIPX_HOME:-"/usr/local/share/pipx"}"
+PIPX_BIN_DIR="${PIPX_BIN_DIR:-"/usr/local/bin"}"
+PIPX_MAN_DIR="${PIPX_MAN_DIR:-"/usr/local/share/man"}"
 VERSION=${VERSION:-"latest"}
 
 # install
@@ -36,13 +38,19 @@ chown -R "$_REMOTE_USER:" "$PIPX_HOME"
 if [ -d "/etc/profile.d" ]; then
   {
     echo "export PIPX_HOME=\"$PIPX_HOME\""
-    echo 'command -v pipx >/dev/null || export PATH="$PIPX_HOME/bin:$PATH"'
+    echo "export PIPX_BIN_DIR=\"$PIPX_BIN_DIR\""
+    echo "export PIPX_MAN_DIR=\"$PIPX_MAN_DIR\""
+    echo 'export PATH="$PIPX_HOME/bin:$PATH"'
+    echo 'export PATH="$PIPX_BIN_DIR:$PATH"'
   } >/etc/profile.d/pipx.sh
 fi
 if [ -d "/etc/fish/conf.d" ]; then
   {
     echo "set -x PIPX_HOME \"$PIPX_HOME\""
-    echo 'command -q pipx; or set -p fish_user_paths $PIPX_HOME/bin'
+    echo "set -x PIPX_BIN_DIR \"$PIPX_BIN_DIR\""
+    echo "set -x PIPX_MAN_DIR \"$PIPX_MAN_DIR\""
+    echo 'set -p fish_user_paths $PIPX_HOME/bin'
+    echo 'set -p fish_user_paths $PIPX_BIN_DIR'
   } >/etc/fish/conf.d/pipx.fish
 fi
 
