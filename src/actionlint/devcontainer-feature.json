@@ -1,6 +1,6 @@
 {
   "id": "actionlint",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "name": "actionlint",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/actionlint",
   "description": "Static checker for GitHub Actions workflow files.",
@@ -10,11 +10,11 @@
       "description": "Version to install. If not specified, the latest version will be installed.",
       "proposals": ["1.6.24"],
       "type": "string"
-    }
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": ["github.vscode-github-actions", "redhat.vscode-yaml"]
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug mode.",
+      "type": "boolean"
     }
   },
   "installsAfter": ["ghcr.io/nikaro/features/packages"]

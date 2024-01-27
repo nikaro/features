@@ -2,7 +2,7 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-if [ -n "${DEBUG:-}" ]; then
+if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
 fi
 
@@ -29,12 +29,13 @@ aarch64 | armv8* | arm64)
   ;;
 esac
 
-curl -sSL "https://github.com/rhysd/actionlint/releases/download/v${VERSION}/actionlint_${VERSION}_linux_${ARCHITECTURE}.tar.gz" -o /tmp/actionlint.tar.gz
-tar -xzf /tmp/actionlint.tar.gz -C /tmp actionlint
+filename="actionlint_${VERSION}_linux_${ARCHITECTURE}.tar.gz"
+curl -sSL "https://github.com/rhysd/actionlint/releases/download/v$VERSION/$filename" -o "/tmp/$filename"
+tar -xzf "/tmp/$filename" -C /tmp actionlint
 mv /tmp/actionlint /usr/local/bin/actionlint
 chmod 0755 /usr/local/bin/actionlint
 
-rm -rf /tmp/actionlint.tar.gz
+rm -rf "/tmp/$filename"
 
 pkg_remove curl
 pkg_remove jq
