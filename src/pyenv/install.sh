@@ -24,6 +24,7 @@ git_checkout https://github.com/pyenv/pyenv.git "$PYENV_ROOT" "$PYENV_GIT_TAG"
 git_checkout https://github.com/pyenv/pyenv-doctor.git "$PYENV_ROOT/plugins/pyenv-doctor" master
 git_checkout https://github.com/pyenv/pyenv-update.git "$PYENV_ROOT/plugins/pyenv-update" master
 git_checkout https://github.com/pyenv/pyenv-virtualenv.git "$PYENV_ROOT/plugins/pyenv-virtualenv" master
+ln -sf "$PYENV_ROOT/bin/pyenv" /usr/local/bin/pyenv
 
 # configure permissions
 chown -R "$_REMOTE_USER:" "$PYENV_ROOT"
@@ -37,22 +38,6 @@ if [ -d "/etc/profile.d" ]; then
     echo 'command -v pyenv >/dev/null && eval "$(pyenv virtualenv-init -)"'
   } >/etc/profile.d/pyenv.sh
 fi
-if [ -f "/etc/bash.bashrc" ]; then
-  {
-    echo "export PYENV_ROOT=\"$PYENV_ROOT\""
-    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"'
-    echo 'command -v pyenv >/dev/null && eval "$(pyenv init -)"'
-    echo 'command -v pyenv >/dev/null && eval "$(pyenv virtualenv-init -)"'
-  } >/etc/bash.bashrc
-fi
-if [ -f "/etc/zsh/zshrc" ]; then
-  {
-    echo "export PYENV_ROOT=\"$PYENV_ROOT\""
-    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"'
-    echo 'command -v pyenv >/dev/null && eval "$(pyenv init -)"'
-    echo 'command -v pyenv >/dev/null && eval "$(pyenv virtualenv-init -)"'
-  } >/etc/zsh/zshrc
-fi
 if [ -d "/etc/fish/conf.d" ]; then
   {
     echo "set -x PYENV_ROOT \"$PYENV_ROOT\""
@@ -61,9 +46,6 @@ if [ -d "/etc/fish/conf.d" ]; then
     echo "command -q pyenv; and pyenv virtualenv-init - | source"
   } >/etc/fish/conf.d/pyenv.fish
 fi
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # remove installed requirements
 pkg_remove git

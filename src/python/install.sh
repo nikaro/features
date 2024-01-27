@@ -35,6 +35,7 @@ if [ "$(pyenv global)" = "system" ]; then
   # install
   pyenv install "$PYTHON_VERSION"
   pyenv global "$PYTHON_VERSION"
+  cp -rvf "$(pyenv root)/versions/$(pyenv version | awk '{print $1}')/"* /usr/local/
 
   # configure permissions
   chown -R "$_REMOTE_USER:" "$(pyenv root)"

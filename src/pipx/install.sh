@@ -37,24 +37,11 @@ if [ -d "/etc/profile.d" ]; then
     echo 'command -v pipx >/dev/null || export PATH="$PIPX_HOME/bin:$PATH"'
   } >/etc/profile.d/pipx.sh
 fi
-if [ -f "/etc/bash.bashrc" ]; then
-  {
-    echo "export PIPX_HOME=\"$PIPX_HOME\""
-    echo 'command -v pipx >/dev/null || export PATH="$PIPX_HOME/bin:$PATH"'
-  } >/etc/bash.bashrc
-fi
-if [ -f "/etc/zsh/zshrc" ]; then
-  {
-    echo "export PIPX_HOME=\"$PIPX_HOME\""
-    echo 'command -v pipx >/dev/null || export PATH="$PIPX_HOME/bin:$PATH"'
-  } >/etc/zsh/zshrc
-fi
 if [ -d "/etc/fish/conf.d" ]; then
   {
     echo "set -x PIPX_HOME \"$PIPX_HOME\""
     echo 'command -q pipx; or set -p fish_user_paths $PIPX_HOME/bin'
   } >/etc/fish/conf.d/pipx.fish
 fi
-export PATH="$PIPX_HOME/bin:$PATH"
 
 remove_nanolayer
