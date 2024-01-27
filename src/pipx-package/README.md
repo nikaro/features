@@ -19,6 +19,7 @@ Installs a pipx package.
 | version | Select the version of the pipx package to install. | string | latest |
 | injections | Space delimitered list of python packages to inject into the main package env | string | - |
 | includeDeps | Include apps of dependent packages | boolean | false |
+| debug | Enable debug logging. | boolean | false |
 
 
 

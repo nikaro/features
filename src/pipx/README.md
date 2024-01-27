@@ -16,6 +16,7 @@ Installs a pipx package.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select the version of pipx to install. | string | latest |
+| debug | Enable debug logging. | boolean | false |
 
 
 
