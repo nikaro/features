@@ -13,18 +13,22 @@ git_checkout() {
 }
 
 pkg_install() {
-  # ensure bash is installed
-  if ! type bash >/dev/null 2>&1; then
-    if [ -x "/usr/bin/apt-get" ]; then
+  # ensure package is installed
+  if [ -x "/usr/bin/apt-get" ]; then
+    if ! dpkg -l | grep '^ii' | awk '{print $2}' | grep -q -e "^$1\$"; then
       apt-get update -y
       apt-get -y install "$1"
-    elif [ -x "/sbin/apk" ]; then
-      apk add --no-cache "$1"
-    else
-      err "unsupported distro"
+      # create a semaphor file
+      mktemp -t "$1-XXXXXXXXXX"
     fi
-    # create a semaphor file
-    mktemp -t "$1-XXXXXXXXXX"
+  elif [ -x "/sbin/apk" ]; then
+    if ! apk info 2>&1 | grep -q -e "^$1\$"; then
+      apk add --no-cache "$1"
+      # create a semaphor file
+      mktemp -t "$1-XXXXXXXXXX"
+    fi
+  else
+    err "unsupported distro"
   fi
 }
 
@@ -59,15 +63,13 @@ pkg_remove() {
   # remove package if it was installed by this script
   tmp_dir=$(basedir "$(mktemp -t detect-tmp-dir-XXXXXXXXXX)")
   if ls "$tmp_dir"/"$1"-* >/dev/null 2>&1; then
-    if type curl >/dev/null 2>&1; then
-      if [ -x "/usr/bin/apt-get" ]; then
-        apt-get -y purge "$1" --auto-remove
-        rm -rf /var/lib/apt/lists/*
-      elif [ -x "/sbin/apk" ]; then
-        apk del "$1"
-      else
-        err "unsupported distro"
-      fi
+    if [ -x "/usr/bin/apt-get" ]; then
+      apt-get -y purge "$1" --auto-remove
+      rm -rf /var/lib/apt/lists/*
+    elif [ -x "/sbin/apk" ]; then
+      apk del "$1"
+    else
+      err "unsupported distro"
     fi
     rm -f "$tmp_dir"/"$1"-*
   fi

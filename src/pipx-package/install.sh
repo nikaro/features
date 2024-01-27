@@ -17,7 +17,7 @@ VERSION=${VERSION:-"latest"}
 INJECTIONS=${INJECTIONS:-""}
 INCLUDEDEPS=${INCLUDEDEPS:-"false"}
 
-if pipx list --short | grep -q "$PACKAGE"; then
+if ! pipx list --short | grep -q "$PACKAGE"; then
   if [ "$VERSION" = "latest" ]; then
     pipx_installation="$PACKAGE"
   else
