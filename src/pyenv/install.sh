@@ -33,16 +33,14 @@ if [ -d "/etc/profile.d" ]; then
   {
     echo "export PYENV_ROOT=\"$PYENV_ROOT\""
     echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"'
-    echo 'command -v pyenv >/dev/null && eval "$(pyenv init -)"'
-    echo 'command -v pyenv >/dev/null && eval "$(pyenv virtualenv-init -)"'
+    echo 'command -v pyenv >/dev/null && eval "$(pyenv init --path)"'
   } >/etc/profile.d/pyenv.sh
 fi
 if [ -d "/etc/fish/conf.d" ]; then
   {
     echo "set -x PYENV_ROOT \"$PYENV_ROOT\""
     echo 'command -q pyenv; or set -p fish_user_paths $PYENV_ROOT/bin'
-    echo "command -q pyenv; and pyenv init - | source"
-    echo "command -q pyenv; and pyenv virtualenv-init - | source"
+    echo "command -q pyenv; and source (pyenv init --path | psub)"
   } >/etc/fish/conf.d/pyenv.fish
 fi
 
