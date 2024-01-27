@@ -16,6 +16,7 @@ Python installation.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | python_version | Python version to install. Defaults to the latest version available. | string | - |
+| debug | Enable debug logging. | boolean | false |
 
 
 

@@ -17,6 +17,7 @@ Simple Python version management.
 |-----|-----|-----|-----|
 | pyenv_git_tag | Version to install. If not specified, the latest version will be installed. | string | - |
 | pyenv_root | Path to the poetry home directory. | string | /opt/pyenv |
+| debug | Enable debug logging. | boolean | false |
 
 
 
