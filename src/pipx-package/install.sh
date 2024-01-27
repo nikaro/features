@@ -28,8 +28,9 @@ if ! pipx list --short | grep -q "$PACKAGE"; then
   fi
 
   # install main package
+  verbose=$(if [ "$DEBUG" = "true" ]; then echo --verbose; fi)
   include_deps_cmd=$(if [ "$INCLUDEDEPS" = "true" ]; then echo --include-deps; fi)
-  pipx install --pip-args '--no-cache-dir --force-reinstall' -f "$pipx_installation" "$include_deps_cmd"
+  pipx install --pip-args '--no-cache-dir --force-reinstall' -f "$pipx_installation" "$include_deps_cmd" "$verbose"
 
   # install injections (if provided)
   for injection in $INJECTIONS; do
