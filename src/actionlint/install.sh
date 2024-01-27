@@ -2,9 +2,15 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-if [ "${1:-}" = "DEBUG" ]; then
+if [ -n "${DEBUG:-}" ]; then
   set -o xtrace
 fi
+
+# shellcheck source=library_scripts.sh
+. ./library_scripts.sh
+
+pkg_install curl
+pkg_install jq
 
 # get latest version
 if [ -z "${VERSION:-}" ]; then
@@ -19,8 +25,7 @@ aarch64 | armv8* | arm64)
   ARCHITECTURE="arm64"
   ;;
 *)
-  echo "Architecture unsupported"
-  exit 1
+  err "Architecture unsupported"
   ;;
 esac
 
@@ -30,3 +35,6 @@ mv /tmp/actionlint /usr/local/bin/actionlint
 chmod 0755 /usr/local/bin/actionlint
 
 rm -rf /tmp/actionlint.tar.gz
+
+pkg_remove curl
+pkg_remove jq

@@ -1,7 +1,7 @@
 {
   "id": "pipx",
   "name": "pipx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Installs a pipx package.",
   "documentationURL": "http://github.com/nikaro/features/tree/main/src/pipx",
   "options": {
