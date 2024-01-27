@@ -24,7 +24,6 @@ git_checkout https://github.com/pyenv/pyenv.git "$PYENV_ROOT" "$PYENV_GIT_TAG"
 git_checkout https://github.com/pyenv/pyenv-doctor.git "$PYENV_ROOT/plugins/pyenv-doctor" master
 git_checkout https://github.com/pyenv/pyenv-update.git "$PYENV_ROOT/plugins/pyenv-update" master
 git_checkout https://github.com/pyenv/pyenv-virtualenv.git "$PYENV_ROOT/plugins/pyenv-virtualenv" master
-ln -sf "$PYENV_ROOT/bin/pyenv" /usr/local/bin/pyenv
 
 # configure permissions
 chown -R "$_REMOTE_USER:" "$PYENV_ROOT"

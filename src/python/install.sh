@@ -13,6 +13,7 @@ fi
 ensure_nanolayer
 
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pyenv"
+. /etc/profile
 
 if [ "$(pyenv global)" = "system" ]; then
   # set options

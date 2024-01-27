@@ -13,6 +13,7 @@ fi
 ensure_nanolayer
 
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/python"
+. /etc/profile
 
 # set options
 PIPX_HOME="${PIPX_HOME:-"/opt/pipx"}"
@@ -25,7 +26,6 @@ if [ "$VERSION" = "latest" ]; then
 else
   "$PIPX_HOME"/bin/pip install --no-cache-dir --disable-pip-version-check "pipx==$VERSION"
 fi
-ln -sf "$PIPX_HOME"/bin/pipx /usr/local/bin/pipx
 
 # configure permissions
 chown -R "$_REMOTE_USER:" "$PIPX_HOME"
