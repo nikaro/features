@@ -62,6 +62,8 @@ if [ -d "/etc/fish/conf.d" ]; then
   } >/etc/fish/conf.d/pyenv.fish
 fi
 export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # remove installed requirements
 pkg_remove git
