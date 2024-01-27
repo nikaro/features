@@ -1,6 +1,6 @@
 {
   "id": "pre-commit",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "name": "pre-commit",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/pre-commit",
   "description": "A framework for managing and maintaining multi-language pre-commit hooks.",
@@ -12,5 +12,10 @@
       "type": "string"
     }
   },
-  "installsAfter": ["ghcr.io/nikaro/features/packages"]
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/pipx",
+    "ghcr.io/nikaro/features/pyenv",
+    "ghcr.io/nikaro/features/python"
+  ]
 }

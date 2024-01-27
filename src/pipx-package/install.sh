@@ -6,7 +6,7 @@ if [ -n "${DEBUG:-}" ]; then
   set -o xtrace
 fi
 
-# shellcheck source=src/library_scripts.sh
+# shellcheck source=library_scripts.sh
 . ./library_scripts.sh
 
 ensure_nanolayer

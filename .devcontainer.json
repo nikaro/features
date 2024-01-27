@@ -19,7 +19,7 @@
     "ghcr.io/nikaro/features/packages": {
       "packages": "npm"
     },
-    "ghcr.io/nikaro/features/python": {},
+    "ghcr.io/nikaro/features/pre-commit": {},
     "ghcr.io/nikaro/features/shellcheck": {},
     "ghcr.io/nikaro/features/shfmt": {}
   },

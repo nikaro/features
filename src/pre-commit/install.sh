@@ -2,11 +2,16 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-
-# get latest version
-if [ -z "${VERSION:-}" ]; then
-  VERSION="$(curl -s https://api.github.com/repos/pre-commit/pre-commit/releases/latest | jq -r '.tag_name' | sed 's/v//')"
+if [ -n "${DEBUG:-}" ]; then
+  set -o xtrace
 fi
 
-curl -sSL "https://github.com/pre-commit/pre-commit/releases/download/v${VERSION}/pre-commit-${VERSION}.pyz" -o /usr/local/bin/pre-commit
-chmod 0755 /usr/local/bin/pre-commit
+# shellcheck source=library_scripts.sh
+. ./library_scripts.sh
+
+ensure_nanolayer
+
+nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pipx-package" \
+  --option package="pre-commit" --option version="${VERSION:-}"
+
+remove_nanolayer

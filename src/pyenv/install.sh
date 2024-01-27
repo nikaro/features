@@ -9,7 +9,7 @@ if [ -n "${DEBUG:-}" ]; then
   export PYENV_DEBUG
 fi
 
-# shellcheck source=src/library_scripts.sh
+# shellcheck source=library_scripts.sh
 . ./library_scripts.sh
 
 # install requirements
