@@ -47,7 +47,7 @@ ensure_nanolayer() {
     tmp_dir=$(mktemp -d -t nanolayer-XXXXXXXXXX)
     filename=nanolayer-"$(uname -m)"-unknown-linux-$clib_type.tgz
     repo="devcontainers-contrib/nanolayer"
-    version=$(curl -s https://api.github.com/repos/$repo/releases/latest | jq -r '.tag_name' | sed 's/v//')
+    version=$(curl -s https://api.github.com/repos/$repo/releases/latest | jq -r '.tag_name')
 
     curl -sfL "https://github.com/$repo/releases/download/$version/$filename" -o "$tmp_dir/$filename"
     tar xfzv "$tmp_dir/$filename" -C "/usr/local/bin"
