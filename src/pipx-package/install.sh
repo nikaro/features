@@ -28,9 +28,16 @@ if ! pipx list --short | grep -q "$PACKAGE"; then
   fi
 
   # install main package
-  verbose=$(if [ "$DEBUG" = "true" ]; then echo --verbose; fi)
-  include_deps_cmd=$(if [ "$INCLUDEDEPS" = "true" ]; then echo --include-deps; fi)
-  pipx install --pip-args="--no-cache-dir" "$include_deps_cmd" "$verbose" "$pipx_installation"
+  # shellcheck disable=SC2089
+  pipx_args='--pip-args="--no-cache-dir"'
+  if [ "$INCLUDEDEPS" = "true" ]; then
+    pipx_args="$pipx_args --include-deps"
+  fi
+  if [ "$DEBUG" = "true" ]; then
+    pipx_args="$pipx_args --verbose"
+  fi
+  # shellcheck disable=SC2086,SC2090
+  pipx install $pipx_args "$pipx_installation"
 
   # install injections (if provided)
   for injection in $INJECTIONS; do
