@@ -1,0 +1,24 @@
+{
+  "id": "devcontainer-cli",
+  "name": "devcontainer-cli",
+  "version": "1.0.0",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/devcontainer-cli",
+  "description": "CLI for devcontainers.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": ["3.3.1"],
+      "type": "string"
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/node"
+  ]
+}
