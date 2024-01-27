@@ -16,6 +16,7 @@ A framework for managing and maintaining multi-language pre-commit hooks.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
+| debug | Enable debug logging. | boolean | false |
 
 
 
