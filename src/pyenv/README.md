@@ -7,7 +7,7 @@ Simple Python version management.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/features/pyenv:1": {}
+    "ghcr.io/nikaro/features/pyenv:2": {}
 }
 ```
 
@@ -17,14 +17,6 @@ Simple Python version management.
 |-----|-----|-----|-----|
 | pyenv_git_tag | Version to install. If not specified, the latest version will be installed. | string | - |
 | pyenv_root | Path to the poetry home directory. | string | /opt/pyenv |
-| python_version | Python version to install through pyenv. If not specified, the latest version will be installed. | string | - |
-
-## Customizations
-
-### VS Code Extensions
-
-- `ms-python.python`
-- `ms-python.vscode-pylance`
 
 
 
