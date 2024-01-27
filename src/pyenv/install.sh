@@ -37,6 +37,22 @@ if [ -d "/etc/profile.d" ]; then
     echo 'command -v pyenv >/dev/null && eval "$(pyenv virtualenv-init -)"'
   } >/etc/profile.d/pyenv.sh
 fi
+if [ -f "/etc/bash.bashrc" ]; then
+  {
+    echo "export PYENV_ROOT=\"$PYENV_ROOT\""
+    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"'
+    echo 'command -v pyenv >/dev/null && eval "$(pyenv init -)"'
+    echo 'command -v pyenv >/dev/null && eval "$(pyenv virtualenv-init -)"'
+  } >/etc/bash.bashrc
+fi
+if [ -f "/etc/zsh/zshrc" ]; then
+  {
+    echo "export PYENV_ROOT=\"$PYENV_ROOT\""
+    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"'
+    echo 'command -v pyenv >/dev/null && eval "$(pyenv init -)"'
+    echo 'command -v pyenv >/dev/null && eval "$(pyenv virtualenv-init -)"'
+  } >/etc/zsh/zshrc
+fi
 if [ -d "/etc/fish/conf.d" ]; then
   {
     echo "set -x PYENV_ROOT \"$PYENV_ROOT\""
