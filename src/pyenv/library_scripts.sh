@@ -61,7 +61,7 @@ ensure_nanolayer() {
 
 pkg_remove() {
   # remove package if it was installed by this script
-  tmp_dir=$(basedir "$(mktemp -t detect-tmp-dir-XXXXXXXXXX)")
+  tmp_dir=$(dirname "$(mktemp -t detect-tmp-dir-XXXXXXXXXX)")
   if ls "$tmp_dir"/"$1"-* >/dev/null 2>&1; then
     if [ -x "/usr/bin/apt-get" ]; then
       apt-get -y purge "$1" --auto-remove
@@ -77,7 +77,7 @@ pkg_remove() {
 
 remove_nanolayer() {
   # remove nanolayer if it was installed by this script
-  tmp_dir=$(basedir "$(mktemp -t detect-tmp-dir-XXXXXXXXXX)")
+  tmp_dir=$(dirname "$(mktemp -t detect-tmp-dir-XXXXXXXXXX)")
   if ls "$tmp_dir"/nanolayer-* >/dev/null 2>&1; then
     if type nanolayer >/dev/null 2>&1; then
       rm -f /usr/local/bin/nanolayer
