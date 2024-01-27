@@ -7,7 +7,7 @@ A framework for managing and maintaining multi-language pre-commit hooks.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/features/pre-commit:1": {}
+    "ghcr.io/nikaro/features/pre-commit:2": {}
 }
 ```
 
