@@ -55,5 +55,6 @@ if [ -d "/etc/fish/conf.d" ]; then
     echo 'command -q pipx; or set -p fish_user_paths $PIPX_HOME/bin'
   } >/etc/fish/conf.d/pipx.fish
 fi
+export PATH="$PIPX_HOME/bin:$PATH"
 
 remove_nanolayer

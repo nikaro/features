@@ -1,7 +1,7 @@
 {
   "id": "pyenv",
   "name": "pyenv",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/pyenv",
   "description": "Simple Python version management.",
   "options": {
