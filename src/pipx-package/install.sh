@@ -28,15 +28,14 @@ if ! pipx list --short | grep -q "$PACKAGE"; then
   fi
 
   # install main package
-  # shellcheck disable=SC2089
-  pipx_args='--pip-args="--no-cache-dir"'
+  pipx_args=--pip-args="--no-cache-dir"
   if [ "$INCLUDEDEPS" = "true" ]; then
     pipx_args="$pipx_args --include-deps"
   fi
   if [ "$DEBUG" = "true" ]; then
     pipx_args="$pipx_args --verbose"
   fi
-  # shellcheck disable=SC2086,SC2090
+  # shellcheck disable=SC2086
   pipx install $pipx_args "$pipx_installation"
 
   # install injections (if provided)
