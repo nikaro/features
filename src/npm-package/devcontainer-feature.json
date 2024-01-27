@@ -1,0 +1,31 @@
+{
+  "id": "npm-package",
+  "name": "npm-package",
+  "version": "1.0.0",
+  "description": "Installs a npm package.",
+  "documentationURL": "http://github.com/nikaro/features/tree/main/src/npm-package",
+  "options": {
+    "package": {
+      "type": "string",
+      "proposals": ["ruff"],
+      "default": "",
+      "description": "Select the npm package to install."
+    },
+    "version": {
+      "type": "string",
+      "proposals": ["latest"],
+      "default": "latest",
+      "description": "Select the version of the npm package to install."
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/npm",
+    "ghcr.io/nikaro/features/python"
+  ]
+}
