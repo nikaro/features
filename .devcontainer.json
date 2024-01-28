@@ -19,8 +19,7 @@
     "ghcr.io/nikaro/features/devcontainer-cli": {},
     "ghcr.io/nikaro/features/pre-commit": {},
     "ghcr.io/nikaro/features/shellcheck": {},
-    "ghcr.io/nikaro/features/shfmt": {},
-    "ghcr.io/nikaro/features/dind": {}
+    "ghcr.io/nikaro/features/shfmt": {}
   },
   "mounts": [
     {
