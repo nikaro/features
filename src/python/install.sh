@@ -37,7 +37,7 @@ if python --version 2>&1 | grep -q -e "^Python $VERSION"; then
 
   # install
   curl -sSL "$URL" -o /tmp/python.tar.gz
-  tar -xaf /tmp/python.tar.gz -C /usr/local --strip-components 1
+  tar -xavf /tmp/python.tar.gz -C /usr/local --strip-components 1
 fi
 
 # remove installed requirements
