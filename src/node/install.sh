@@ -45,9 +45,18 @@ fi
 # install
 curl -sSL "${URL}" -o /tmp/node.tar.xz
 tar -xaf /tmp/node.tar.xz -C /opt
-ln -sf "/opt/node-v${VERSION}-linux-${ARCHITECTURE}/bin/node" /usr/local/bin/node
-ln -sf "/opt/node-v${VERSION}-linux-${ARCHITECTURE}/bin/npm" /usr/local/bin/npm
-ln -sf "/opt/node-v${VERSION}-linux-${ARCHITECTURE}/bin/npx" /usr/local/bin/npx
+
+# setup shells
+if [ -d "/etc/profile.d" ]; then
+  {
+    echo "export PATH=\"/opt/node-v${VERSION}-linux-${ARCHITECTURE}/bin:\$PATH\""
+  } >/etc/profile.d/node.sh
+fi
+if [ -d "/etc/fish/conf.d" ]; then
+  {
+    echo "set -p fish_user_paths /opt/node-v${VERSION}-linux-${ARCHITECTURE}/bin"
+  } >/etc/fish/conf.d/node.fish
+fi
 
 # cleanup
 rm -rf /tmp/node.tar.xz

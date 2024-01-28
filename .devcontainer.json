@@ -1,6 +1,6 @@
 {
   "name": "features",
-  "image": "ghcr.io/nikaro/alpine-devcontainer:latest",
+  "image": "ghcr.io/nikaro/debian-devcontainer:latest",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,15 +16,10 @@
   },
   "features": {
     "ghcr.io/nikaro/features/actionlint": {},
-    "ghcr.io/nikaro/features/packages": {
-      "packages": "npm"
-    },
+    "ghcr.io/nikaro/features/devcontainer-cli": {},
     "ghcr.io/nikaro/features/pre-commit": {},
     "ghcr.io/nikaro/features/shellcheck": {},
     "ghcr.io/nikaro/features/shfmt": {}
-  },
-  "updateContentCommand": {
-    "devcontainer-cli": "doas npm install -g @devcontainers/cli"
   },
   "mounts": [
     {

@@ -8,6 +8,9 @@ fi
 
 # shellcheck source=library_scripts.sh
 . ./library_scripts.sh
+set +o errexit
+. /etc/profile
+set -o errexit
 
 ensure_nanolayer
 
