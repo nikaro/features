@@ -1,11 +1,11 @@
 {
   "id": "python",
   "name": "python",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/python",
   "description": "Python installation.",
   "options": {
-    "python_version": {
+    "version": {
       "default": "3.12",
       "description": "Python version to install. Defaults to the latest version available.",
       "proposals": ["3.11", "3.9"],
