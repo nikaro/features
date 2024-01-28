@@ -1,7 +1,7 @@
 {
   "id": "go-pkg-goplay",
   "name": "go-pkg-goplay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/go-pkg-goplay",
   "description": "Go tool to modify/update field tags in structs.",
   "options": {

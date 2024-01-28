@@ -11,7 +11,7 @@ fi
 
 ensure_nanolayer
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/go-package" \
-  --option package="github.com/haya14busa/goplay" \
+  --option package="github.com/haya14busa/goplay/cmd/goplay" \
   --option version="${VERSION:-}" \
   --option debug="${DEBUG:-}" \
   --option keep="${KEEP:-}"
