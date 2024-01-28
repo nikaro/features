@@ -31,6 +31,11 @@
       "source": "${localEnv:HOME}/.config/git",
       "target": "/home/vscode/.config/git",
       "type": "bind"
+    },
+    {
+      "source": "pre-commit-cache",
+      "target": "/home/vscode/.cache/pre-commit",
+      "type": "volume"
     }
   ]
 }

@@ -8,13 +8,13 @@ fi
 
 # shellcheck source=library_scripts.sh
 . ./library_scripts.sh
-set +o errexit
-. /etc/profile
-set -o errexit
 
 ensure_nanolayer
 
-nanolayer install devcontainer-feature "ghcr.io/nikaro/features/node"
+nanolayer install devcontainer-feature "ghcr.io/nikaro/features/node" \
+  --option debug="${DEBUG:-}"
+
+reload_profile
 
 VERSION=${VERSION:-"latest"}
 

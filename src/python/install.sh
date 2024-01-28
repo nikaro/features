@@ -11,11 +11,8 @@ fi
 . ./library_scripts.sh
 
 ensure_nanolayer
-
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pyenv"
-set +o errexit
-. /etc/profile
-set -o errexit
+reload_profile
 
 if [ "$(pyenv global)" = "system" ]; then
   # set options

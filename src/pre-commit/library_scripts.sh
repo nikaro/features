@@ -12,6 +12,12 @@ git_checkout() {
   [ -d "$2" ] || git -c advice.detachedHead=0 clone --branch "$3" --depth 1 "$1" "$2" || err "Failed to clone $1"
 }
 
+reload_profile() {
+  set +o errexit
+  . /etc/profile
+  set -o errexit
+}
+
 pkg_install() {
   # ensure package is installed
   if [ -x "/usr/bin/apt-get" ]; then

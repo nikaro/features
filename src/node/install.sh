@@ -61,6 +61,9 @@ fi
 # cleanup
 rm -rf /tmp/node.tar.xz
 
+# set permissions
+chown -R "$_REMOTE_USER:" "/opt/node-v${VERSION}-linux-${ARCHITECTURE}"
+
 # remove installed requirements
 pkg_remove curl
 pkg_remove jq
