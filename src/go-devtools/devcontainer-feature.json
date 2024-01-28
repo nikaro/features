@@ -1,0 +1,23 @@
+{
+  "id": "go-devtools",
+  "name": "go-devtools",
+  "version": "1.0.0",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/go-devtools",
+  "description": "Install tools to be used by the VSCode Go extension (https://github.com/golang/vscode-go/wiki/tools).",
+  "options": {
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.Go"]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/go"
+  ]
+}
