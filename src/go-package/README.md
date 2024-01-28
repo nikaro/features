@@ -17,6 +17,7 @@ Installs a go package.
 |-----|-----|-----|-----|
 | package | Select the go package to install. | string | - |
 | version | Select the version of the go package to install. | string | latest |
+| keep | Do not remove nanolayer. | boolean | false |
 | debug | Enable debug logging. | boolean | false |
 
 
