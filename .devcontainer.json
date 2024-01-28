@@ -19,11 +19,8 @@
     "ghcr.io/nikaro/features/devcontainer-cli": {},
     "ghcr.io/nikaro/features/pre-commit": {},
     "ghcr.io/nikaro/features/shellcheck": {},
-    "ghcr.io/nikaro/features/shfmt": {}
-  },
-  "postCreateCommand": {
-    "create-cache": "mkdir -p /home/vscode/.cache/pre-commit",
-    "chown-cache": "sudo chown -R vscode:vscode /home/vscode/.cache"
+    "ghcr.io/nikaro/features/shfmt": {},
+    "ghcr.io/nikaro/features/dind": {}
   },
   "mounts": [
     {
@@ -35,11 +32,6 @@
       "source": "${localEnv:HOME}/.config/git",
       "target": "/home/vscode/.config/git",
       "type": "bind"
-    },
-    {
-      "source": "pre-commit-cache",
-      "target": "/home/vscode/.cache/pre-commit",
-      "type": "volume"
     }
   ]
 }
