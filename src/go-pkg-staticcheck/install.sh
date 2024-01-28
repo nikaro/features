@@ -11,7 +11,7 @@ fi
 
 ensure_nanolayer
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/go-package" \
-  --option package="honnef.co/go/tools/staticcheck" \
+  --option package="honnef.co/go/tools/cmd/staticcheck" \
   --option version="${VERSION:-}" \
   --option debug="${DEBUG:-}" \
   --option keep="${KEEP:-}"
