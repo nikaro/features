@@ -1,7 +1,7 @@
 {
   "id": "go-package",
   "name": "go-package",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Installs a go package.",
   "documentationURL": "http://github.com/nikaro/features/tree/main/src/go-package",
   "options": {

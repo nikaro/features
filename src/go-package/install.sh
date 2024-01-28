@@ -17,6 +17,7 @@ reload_profile
 VERSION=${VERSION:-"latest"}
 
 # install package
+export GOPATH="$FEATURE_GOPATH"
 go install "$PACKAGE@$VERSION"
 
 if [ "${KEEP:-}" != "true" ]; then
