@@ -8,6 +8,7 @@ fi
 
 # shellcheck source=library_scripts.sh
 . ./library_scripts.sh
+reload_profile
 
 # install requirements
 pkg_install curl
@@ -31,7 +32,7 @@ aarch64 | armv8* | arm64)
 esac
 
 # install if needed
-if ! go version 2>&1 | grep -q -e "${VERSION}"; then
+if ! go version | grep -q -e "$VERSION"; then
   curl -sSL "https://go.dev/dl/${VERSION}.linux-${ARCH}.tar.gz" -o /tmp/go.tar.gz
   tar -xaf /tmp/go.tar.gz -C /usr/local
   rm -f /tmp/go.tar.gz
@@ -39,12 +40,15 @@ if ! go version 2>&1 | grep -q -e "${VERSION}"; then
   # setup shells
   if [ -d "/etc/profile.d" ]; then
     {
-      echo "export PATH=/usr/local/go/bin:$PATH"
+      echo "export FEATURE_GOPATH=/usr/local/go"
+      echo "export PATH=\$FEATURE_GOPATH/bin:$PATH"
     } >/etc/profile.d/go.sh
   fi
   if [ -d "/etc/fish/conf.d" ]; then
     {
-      echo "set -p fish_user_paths /usr/local/go/bin"
+      echo "set -x FEATURE_GOPATH /usr/local/go"
+      # shellcheck disable=SC2016
+      echo 'set -p fish_user_paths $FEATURE_GOPATH/bin'
     } >/etc/fish/conf.d/go.fish
   fi
 fi
