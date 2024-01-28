@@ -31,7 +31,7 @@ aarch64 | armv8* | arm64)
 esac
 
 # install if needed
-if ! go version 2>&1 | grep -q -e "^go version ${VERSION} linux/${ARCH}$"; then
+if ! go version 2>&1 | grep -q -e "${VERSION}"; then
   curl -sSL "https://go.dev/dl/${VERSION}.linux-${ARCH}.tar.gz" -o /tmp/go.tar.gz
   tar -xaf /tmp/go.tar.gz -C /usr/local
   rm -f /tmp/go.tar.gz
