@@ -1,8 +1,8 @@
 {
-  "id": "gopls",
-  "name": "gopls",
+  "id": "go-pkg-gopls",
+  "name": "go-pkg-gopls",
   "version": "1.0.0",
-  "documentationURL": "https://github.com/nikaro/features/tree/main/src/gopls",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/go-pkg-gopls",
   "description": "The Go language server.",
   "options": {
     "version": {
