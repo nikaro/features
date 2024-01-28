@@ -1,7 +1,7 @@
 {
   "id": "python",
   "name": "python",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/python",
   "description": "Python installation.",
   "options": {

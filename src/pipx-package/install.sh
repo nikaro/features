@@ -10,7 +10,8 @@ fi
 . ./library_scripts.sh
 
 ensure_nanolayer
-nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pipx"
+nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pipx" \
+  --option debug="${DEBUG:-}"
 reload_profile
 
 VERSION=${VERSION:-"latest"}

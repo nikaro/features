@@ -11,7 +11,8 @@ fi
 . ./library_scripts.sh
 
 ensure_nanolayer
-nanolayer install devcontainer-feature "ghcr.io/nikaro/features/python"
+nanolayer install devcontainer-feature "ghcr.io/nikaro/features/python" \
+  --option debug="${DEBUG:-}"
 reload_profile
 
 # set options
