@@ -1,7 +1,7 @@
 {
   "id": "go-pkg-goplay",
   "name": "go-pkg-goplay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/go-pkg-goplay",
   "description": "Go tool to modify/update field tags in structs.",
   "options": {
@@ -10,6 +10,11 @@
       "description": "Version to install. If not specified, the latest version will be installed.",
       "proposals": ["v1.0.0"],
       "type": "string"
+    },
+    "keep": {
+      "default": false,
+      "description": "Do not remove nanolayer.",
+      "type": "boolean"
     },
     "debug": {
       "default": false,

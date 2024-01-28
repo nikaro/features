@@ -19,4 +19,6 @@ VERSION=${VERSION:-"latest"}
 # install package
 go install "$PACKAGE@$VERSION"
 
-remove_nanolayer
+if [ "${KEEP:-}" != "true" ]; then
+  remove_nanolayer
+fi

@@ -13,5 +13,8 @@ ensure_nanolayer
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/go-package" \
   --option package="github.com/go-delve/delve/cmd/dlv" \
   --option version="${VERSION:-}" \
-  --option debug="${DEBUG:-}"
-remove_nanolayer
+  --option debug="${DEBUG:-}" \
+  --option keep="${KEEP:-}"
+if [ "${KEEP:-}" != "true" ]; then
+  remove_nanolayer
+fi
