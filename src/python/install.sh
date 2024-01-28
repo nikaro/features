@@ -10,39 +10,36 @@ fi
 # shellcheck source=library_scripts.sh
 . ./library_scripts.sh
 
-ensure_nanolayer
-nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pyenv"
-reload_profile
+# install requirements
+pkg_install curl
+pkg_install jq
 
-if [ "$(pyenv global)" = "system" ]; then
-  # set options
-  if [ -z "${PYTHON_VERSION:-}" ]; then
-    PYTHON_VERSION=$(pyenv install -l | grep -v 'dev\|a\|rc\|-' | tail -n 1 | xargs)
-  fi
+# set options
+VERSION="${VERSION:-3.12}"
 
-  # install requirements
-  if [ -x "/usr/bin/apt-get" ]; then
-    REQUIREMENTS="build-essential libbz2-dev libffi-dev liblzma-dev libreadline-dev libsqlite3-dev libssl-dev zlib1g-dev"
-  elif [ -x "/sbin/apk" ]; then
-    REQUIREMENTS="build-base bzip2-dev libffi-dev libressl-dev libuuid readline-dev sqlite-dev xz-dev zlib-dev"
+if python --version 2>&1 | grep -q -e "^Python $VERSION"; then
+  # detect if the distribution is on glibc or musl
+  if ldd --version | grep -q musl; then
+    LIBC="musl"
   else
-    err "unsupported distro"
+    LIBC="gnu"
   fi
-  for package in $REQUIREMENTS; do
-    pkg_install "$package"
-  done
+
+  # get download url
+  JQ_FILTER='.assets[] | select('
+  JQ_FILTER=$JQ_FILTER'(.name | contains("linux"))'
+  JQ_FILTER=$JQ_FILTER'and (.name | contains("'$VERSION'"))'
+  JQ_FILTER=$JQ_FILTER'and (.name | contains("'$LIBC'"))'
+  JQ_FILTER=$JQ_FILTER'and (.name | contains("-'$(uname -m)'-"))'
+  JQ_FILTER=$JQ_FILTER'and (.name | endswith(".tar.gz"))'
+  JQ_FILTER=$JQ_FILTER') | .browser_download_url'
+  URL="$(curl -s https://api.github.com/repos/indygreg/python-build-standalone/releases/latest | jq -r "$JQ_FILTER")"
 
   # install
-  pyenv install "$PYTHON_VERSION"
-  pyenv global "$PYTHON_VERSION"
-
-  # configure permissions
-  chown -R "$_REMOTE_USER:" "$(pyenv root)"
-
-  # remove installed requirements
-  for package in $REQUIREMENTS; do
-    pkg_remove "$package"
-  done
+  curl -sSL "$URL" -o /tmp/python.tar.gz
+  tar -xaf /tmp/python.tar.gz -C /usr/local --strip-components 1
 fi
 
-remove_nanolayer
+# remove installed requirements
+pkg_remove curl
+pkg_remove jq
