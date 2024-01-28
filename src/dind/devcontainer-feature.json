@@ -1,6 +1,6 @@
 {
   "id": "dind",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "name": "docker-in-docker",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/dind",
   "description": "",
@@ -40,11 +40,19 @@
   "containerEnv": {
     "DOCKER_BUILDKIT": "1"
   },
+  "postStartCommand": {
+    "docker-sock-chgrp": "sudo chgrp docker /var/run/docker.sock"
+  },
   "mounts": [
     {
       "source": "dind-var-lib-docker-${devcontainerId}",
       "target": "/var/lib/docker",
       "type": "volume"
+    },
+    {
+      "source": "/var/run/docker.sock",
+      "target": "/var/run/docker.sock",
+      "type": "bind"
     }
   ]
 }

@@ -2,19 +2,16 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-if [ "${1:-}" = "DEBUG" ]; then
+if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
 fi
 
-# check requirements
-command -v curl >/dev/null 2>&1 || {
-  echo >&2 "curl is required but not installed. Aborting."
-  exit 1
-}
-command -v jq >/dev/null 2>&1 || {
-  echo >&2 "jq is required but not installed. Aborting."
-  exit 1
-}
+# shellcheck source=library_scripts.sh
+. ./library_scripts.sh
+
+# install requirements
+pkg_install curl
+pkg_install jq
 
 # get architecture
 ARCHITECTURE="$(uname -m)"
@@ -70,3 +67,7 @@ cp "${DIR}/entrypoint.sh" /dockerd-entrypoint.sh
 
 # cleanup
 rm -rf /tmp/docker.tgz
+
+# remove installed requirements
+pkg_remove curl
+pkg_remove jq
