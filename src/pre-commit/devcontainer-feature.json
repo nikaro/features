@@ -1,7 +1,7 @@
 {
   "id": "pre-commit",
   "name": "pre-commit",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/pre-commit",
   "description": "A framework for managing and maintaining multi-language pre-commit hooks.",
   "options": {
@@ -19,7 +19,8 @@
   },
   "postCreateCommand": {
     "create-cache": "mkdir -p /home/vscode/.cache/pre-commit",
-    "chown-cache": "sudo chown -R vscode:vscode /home/vscode/.cache"
+    "chown-cache": "sudo chown -R vscode:vscode /home/vscode/.cache",
+    "install-hooks": "pre-commit install --install-hooks"
   },
   "mounts": [
     {
