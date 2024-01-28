@@ -17,7 +17,7 @@ pkg_install jq
 # set options
 VERSION="${VERSION:-3.12}"
 
-if python --version 2>&1 | grep -q -e "^Python $VERSION"; then
+if ! python --version 2>&1 | grep -q -e "^Python $VERSION"; then
   # detect if the distribution is on glibc or musl
   if ldd --version | grep -q musl; then
     LIBC="musl"
