@@ -7,7 +7,7 @@ Python installation.
 
 ```json
 "features": {
-    "ghcr.io/nikaro/features/python:1": {}
+    "ghcr.io/nikaro/features/python:2": {}
 }
 ```
 
@@ -15,7 +15,7 @@ Python installation.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| python_version | Python version to install. Defaults to the latest version available. | string | - |
+| python_version | Python version to install. Defaults to the latest version available. | string | 3.12 |
 | debug | Enable debug logging. | boolean | false |
 
 
