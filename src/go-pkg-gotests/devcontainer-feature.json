@@ -1,7 +1,7 @@
 {
   "id": "go-pkg-gotests",
   "name": "go-pkg-gotests",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/go-pkg-gotests",
   "description": "Automatically generate Go test boilerplate from your source code.",
   "options": {
