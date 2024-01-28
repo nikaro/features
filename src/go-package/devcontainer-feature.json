@@ -1,0 +1,30 @@
+{
+  "id": "go-package",
+  "name": "go-package",
+  "version": "1.0.2",
+  "description": "Installs a go package.",
+  "documentationURL": "http://github.com/nikaro/features/tree/main/src/go-package",
+  "options": {
+    "package": {
+      "type": "string",
+      "proposals": ["ruff"],
+      "default": "",
+      "description": "Select the go package to install."
+    },
+    "version": {
+      "type": "string",
+      "proposals": ["latest"],
+      "default": "latest",
+      "description": "Select the version of the go package to install."
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/go"
+  ]
+}
