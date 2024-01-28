@@ -16,6 +16,7 @@ Delve is a debugger for the Go programming language.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
+| keep | Do not remove nanolayer. | boolean | false |
 | debug | Enable debug logging. | boolean | false |
 
 

@@ -16,6 +16,7 @@ Generates method stubs for implementing an interface.
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
+| keep | Do not remove nanolayer. | boolean | false |
 | debug | Enable debug logging. | boolean | false |
 
 
