@@ -1,0 +1,26 @@
+{
+  "id": "mypy",
+  "name": "mypy",
+  "version": "1.0.0",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/mypy",
+  "description": "Optional static typing for Python.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": ["1.8.0"],
+      "type": "string"
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/pipx",
+    "ghcr.io/nikaro/features/pyenv",
+    "ghcr.io/nikaro/features/python"
+  ]
+}
