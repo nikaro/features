@@ -1,7 +1,7 @@
 {
   "id": "direnv",
   "name": "direnv",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/direnv",
   "description": "Go installation.",
   "options": {
@@ -17,5 +17,12 @@
       "type": "boolean"
     }
   },
+  "mounts": [
+    {
+      "source": "direnv-cache",
+      "target": "/home/vscode/.local/share/direnv/allow",
+      "type": "volume"
+    }
+  ],
   "installsAfter": ["ghcr.io/nikaro/features/packages"]
 }
