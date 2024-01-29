@@ -1,7 +1,7 @@
 {
   "id": "go-devtools",
   "name": "go-devtools",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/go-devtools",
   "description": "Install tools to be used by the VSCode Go extension (https://github.com/golang/vscode-go/wiki/tools).",
   "options": {
