@@ -1,0 +1,21 @@
+{
+  "id": "direnv",
+  "name": "direnv",
+  "version": "1.0.0",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/direnv",
+  "description": "Go installation.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Load and unload environment variables depending on the current directory.",
+      "proposals": ["2.33.0"],
+      "type": "string"
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "installsAfter": ["ghcr.io/nikaro/features/packages"]
+}
