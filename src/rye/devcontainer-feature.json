@@ -1,7 +1,7 @@
 {
   "id": "rye",
   "name": "rye",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/rye",
   "description": "Rye is a project and package management solution for Python.",
   "options": {

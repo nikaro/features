@@ -24,7 +24,7 @@ FILENAME="rye-$(uname -m)-linux"
 URL="https://github.com/mitsuhiko/rye/releases/download/${VERSION}/${FILENAME}.gz"
 curl -L "$URL" -o "/usr/local/bin/${FILENAME}.gz"
 gunzip "/usr/local/bin/${FILENAME}.gz"
-mv -v "/usr/local/bin/${FILENAME}.gz" /usr/local/bin/rye
+mv -v "/usr/local/bin/${FILENAME}" /usr/local/bin/rye
 chmod +x /usr/local/bin/rye
 
 # setup shells
