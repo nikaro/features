@@ -1,7 +1,7 @@
 
 # direnv (direnv)
 
-Go installation.
+Load and unload environment variables depending on the current directory.
 
 ## Example Usage
 
@@ -15,7 +15,7 @@ Go installation.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| version | Load and unload environment variables depending on the current directory. | string | - |
+| version | Version to install. Defaults to the latest version available. | string | - |
 | debug | Enable debug logging. | boolean | false |
 
 
