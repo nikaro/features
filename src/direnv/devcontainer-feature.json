@@ -3,11 +3,11 @@
   "name": "direnv",
   "version": "1.1.2",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/direnv",
-  "description": "Go installation.",
+  "description": "Load and unload environment variables depending on the current directory.",
   "options": {
     "version": {
       "default": "",
-      "description": "Load and unload environment variables depending on the current directory.",
+      "description": "Version to install. Defaults to the latest version available.",
       "proposals": ["2.33.0"],
       "type": "string"
     },
