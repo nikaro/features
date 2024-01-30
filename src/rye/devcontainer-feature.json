@@ -1,0 +1,32 @@
+{
+  "id": "rye",
+  "name": "rye",
+  "version": "1.0.0",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/rye",
+  "description": "Rye is a project and package management solution for Python.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. Defaults to the latest version available.",
+      "proposals": ["0.19.0"],
+      "type": "string"
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "postCreateCommand": {
+    "create-cache": "mkdir -p /home/vscode/.local/share/rye",
+    "chown-cache": "sudo chown -R vscode:vscode /home/vscode/.local"
+  },
+  "mounts": [
+    {
+      "source": "rye-cache",
+      "target": "/home/vscode/.local/share/rye",
+      "type": "volume"
+    }
+  ],
+  "installsAfter": ["ghcr.io/nikaro/features/packages"]
+}
