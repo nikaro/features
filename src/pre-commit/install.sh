@@ -6,14 +6,18 @@ if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
 fi
 
-# shellcheck source=library_scripts.sh
-. ./library_scripts.sh
+# get latest version
+if [ -z "${VERSION:-}" ]; then
+  VERSION="$(
+    curl -s https://api.github.com/repos/pre-commit/pre-commit/releases/latest |
+      grep tag_name |
+      cut -d '"' -f 4 |
+      sed 's/v//'
+  )"
+fi
 
-ensure_nanolayer
-
-nanolayer install devcontainer-feature "ghcr.io/nikaro/features/pipx-package" \
-  --option package="pre-commit" \
-  --option version="${VERSION:-}" \
-  --option debug="${DEBUG:-}"
-
-remove_nanolayer
+# install
+FILENAME="pre-commit-${VERSION}.pyz"
+URL="https://github.com/pre-commit/pre-commit/releases/download/v${VERSION}/${FILENAME}"
+curl -L "$URL" -o /usr/local/bin/pre-commit
+chmod 0755 /usr/local/bin/pre-commit
