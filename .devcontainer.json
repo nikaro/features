@@ -20,17 +20,5 @@
     "ghcr.io/nikaro/features/pre-commit": {},
     "ghcr.io/nikaro/features/shellcheck": {},
     "ghcr.io/nikaro/features/shfmt": {}
-  },
-  "mounts": [
-    {
-      "source": "${localEnv:HOME}/.config/fish",
-      "target": "/home/vscode/.config/fish",
-      "type": "bind"
-    },
-    {
-      "source": "${localEnv:HOME}/.config/git",
-      "target": "/home/vscode/.config/git",
-      "type": "bind"
-    }
-  ]
+  }
 }
