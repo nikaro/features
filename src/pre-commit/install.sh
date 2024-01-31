@@ -21,3 +21,7 @@ FILENAME="pre-commit-${VERSION}.pyz"
 URL="https://github.com/pre-commit/pre-commit/releases/download/v${VERSION}/${FILENAME}"
 curl -L "$URL" -o /usr/local/bin/pre-commit
 chmod 0755 /usr/local/bin/pre-commit
+
+# setup cache directory
+mkdir -p "${_REMOTE_USER_HOME}/.cache/pre-commit"
+chown -R "${_REMOTE_USER}:${_REMOTE_USER}" "${_REMOTE_USER_HOME}/.cache"
