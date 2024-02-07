@@ -15,12 +15,13 @@ if [ -z "${VERSION:-}" ]; then
       sed 's/v//'
   )"
 fi
-
-# install
-FILENAME="pre-commit-${VERSION}.pyz"
-URL="https://github.com/pre-commit/pre-commit/releases/download/v${VERSION}/${FILENAME}"
-curl -L "$URL" -o /usr/local/bin/pre-commit
-chmod 0755 /usr/local/bin/pre-commit
+# install if needed
+if ! pre-commit --version | grep -q -e "$VERSION"; then
+  FILENAME="pre-commit-${VERSION}.pyz"
+  URL="https://github.com/pre-commit/pre-commit/releases/download/v${VERSION}/${FILENAME}"
+  curl -L "$URL" -o /usr/local/bin/pre-commit
+  chmod 0755 /usr/local/bin/pre-commit
+fi
 
 # setup cache directory
 mkdir -p "${_REMOTE_USER_HOME}/.cache/pre-commit"
