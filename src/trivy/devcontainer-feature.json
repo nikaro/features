@@ -1,6 +1,6 @@
 {
   "id": "trivy",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "name": "trivy",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/trivy",
   "description": "Install trivy, a vulnerability scanner for containers and other artifacts.",
@@ -14,10 +14,7 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "hashicorp.terraform",
-        "AquaSecurityOfficial.trivy-vulnerability-scanner"
-      ]
+      "extensions": ["AquaSecurityOfficial.trivy-vulnerability-scanner"]
     }
   },
   "installsAfter": ["ghcr.io/nikaro/features/packages"]

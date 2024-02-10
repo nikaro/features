@@ -2,13 +2,18 @@
 
 set -o errexit # Exit on error
 set -o nounset # Exit on uninitialized variable
-if [ "${1:-}" = "DEBUG" ]; then
+if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
 fi
 
 # get latest version
 if [ -z "${VERSION:-}" ]; then
-  VERSION="$(curl -s https://api.github.com/repos/aquasecurity/trivy/releases/latest | jq -r '.tag_name' | sed 's/v//')"
+  VERSION="$(
+    curl -s https://api.github.com/repos/aquasecurity/trivy/releases/latest |
+      grep tag_name |
+      cut -d '"' -f 4 |
+      sed 's/v//'
+  )"
 fi
 
 case "$(uname -m)" in
