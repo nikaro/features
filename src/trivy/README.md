@@ -21,7 +21,6 @@ Install trivy, a vulnerability scanner for containers and other artifacts.
 
 ### VS Code Extensions
 
-- `hashicorp.terraform`
 - `AquaSecurityOfficial.trivy-vulnerability-scanner`
 
 
