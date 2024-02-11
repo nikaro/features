@@ -18,6 +18,13 @@ Infrastructure as Code in any programming language..
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
 | debug | Enable debug logging. | boolean | false |
 
+## Customizations
+
+### VS Code Extensions
+
+- `esbenp.prettier-vscode`
+- `redhat.vscode-yaml`
+
 
 
 ---

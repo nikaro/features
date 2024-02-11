@@ -21,6 +21,7 @@ Command line tool for communicating with Kubernetes API.
 
 ### VS Code Extensions
 
+- `esbenp.prettier-vscode`
 - `ms-kubernetes-tools.vscode-kubernetes-tools`
 - `redhat.vscode-yaml`
 

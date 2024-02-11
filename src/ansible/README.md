@@ -25,6 +25,7 @@ Ansible is an open source community project sponsored by Red Hat, it's the simpl
 
 ### VS Code Extensions
 
+- `esbenp.prettier-vscode`
 - `redhat.ansible`
 - `redhat.vscode-yaml`
 

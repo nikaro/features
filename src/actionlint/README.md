@@ -22,6 +22,7 @@ Static checker for GitHub Actions workflow files.
 
 ### VS Code Extensions
 
+- `esbenp.prettier-vscode`
 - `github.vscode-github-actions`
 - `redhat.vscode-yaml`
 

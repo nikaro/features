@@ -24,6 +24,7 @@ Python packaging and dependency management made easy.
 ### VS Code Extensions
 
 - `ms-python.python`
+- `tamasfe.even-better-toml`
 
 
 

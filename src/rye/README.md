@@ -23,6 +23,7 @@ Rye is a project and package management solution for Python.
 ### VS Code Extensions
 
 - `ms-python.python`
+- `tamasfe.even-better-toml`
 
 
 
