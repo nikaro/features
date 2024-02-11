@@ -1,7 +1,7 @@
 {
   "id": "mypy",
   "name": "mypy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/mypy",
   "description": "Optional static typing for Python.",
   "options": {
@@ -15,6 +15,11 @@
       "default": false,
       "description": "Enable debug logging.",
       "type": "boolean"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["matangover.mypy"]
     }
   },
   "installsAfter": [

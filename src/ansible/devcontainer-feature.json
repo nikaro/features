@@ -1,6 +1,6 @@
 {
   "id": "ansible",
-  "version": "1.3.5",
+  "version": "1.4.0",
   "name": "ansible",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/ansible",
   "description": "Ansible is an open source community project sponsored by Red Hat, it's the simplest way to automate IT.",
@@ -37,7 +37,7 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["redhat.ansible"]
+      "extensions": ["redhat.ansible", "redhat.vscode-yaml"]
     }
   },
   "installsAfter": [

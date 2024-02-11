@@ -1,7 +1,7 @@
 {
   "id": "python",
   "name": "python",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/python",
   "description": "Python installation.",
   "options": {
@@ -15,6 +15,11 @@
       "default": false,
       "description": "Enable debug logging.",
       "type": "boolean"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
     }
   },
   "installsAfter": [

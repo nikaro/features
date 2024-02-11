@@ -1,6 +1,6 @@
 {
   "id": "ansible-lint",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "ansible-lint",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/ansible-lint",
   "description": "Linter for Ansible.",
@@ -25,7 +25,7 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["redhat.ansible"]
+      "extensions": ["redhat.ansible", "redhat.vscode-yaml"]
     }
   },
   "installsAfter": [

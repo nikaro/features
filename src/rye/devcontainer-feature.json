@@ -1,7 +1,7 @@
 {
   "id": "rye",
   "name": "rye",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/rye",
   "description": "Rye is a project and package management solution for Python.",
   "options": {
@@ -20,6 +20,11 @@
   "postCreateCommand": {
     "create-cache": "mkdir -p /home/vscode/.local/share/rye",
     "chown-cache": "sudo chown -R vscode:vscode /home/vscode/.local"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
   },
   "installsAfter": ["ghcr.io/nikaro/features/packages"]
 }
