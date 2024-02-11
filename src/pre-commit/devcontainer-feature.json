@@ -1,7 +1,7 @@
 {
   "id": "pre-commit",
   "name": "pre-commit",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/pre-commit",
   "description": "A framework for managing and maintaining multi-language pre-commit hooks.",
   "options": {
@@ -27,6 +27,17 @@
       "type": "volume"
     }
   ],
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode", "redhat.vscode-yaml"],
+      "settings": {
+        "[yaml]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        }
+      }
+    }
+  },
   "installsAfter": [
     "ghcr.io/nikaro/features/packages",
     "ghcr.io/nikaro/features/python"

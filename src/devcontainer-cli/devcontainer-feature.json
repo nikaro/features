@@ -1,7 +1,7 @@
 {
   "id": "devcontainer-cli",
   "name": "devcontainer-cli",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/devcontainer-cli",
   "description": "CLI for devcontainers.",
   "options": {
@@ -15,6 +15,27 @@
       "default": false,
       "description": "Enable debug logging.",
       "type": "boolean"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode"],
+      "settings": {
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "json.schemas": [
+          {
+            "fileMatch": ["*/devcontainer-feature.json"],
+            "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
+          }
+        ]
+      }
     }
   },
   "installsAfter": [

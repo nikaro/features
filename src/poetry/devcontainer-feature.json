@@ -1,6 +1,6 @@
 {
   "id": "poetry",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "poetry",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/poetry",
   "description": "Python packaging and dependency management made easy.",
@@ -25,7 +25,13 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["ms-python.python"]
+      "extensions": ["ms-python.python", "tamasfe.even-better-toml"],
+      "settings": {
+        "[toml]": {
+          "editor.defaultFormatter": "tamasfe.even-better-toml",
+          "editor.formatOnSave": true
+        }
+      }
     }
   },
   "installsAfter": [

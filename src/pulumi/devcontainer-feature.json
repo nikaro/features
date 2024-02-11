@@ -17,5 +17,16 @@
       "type": "boolean"
     }
   },
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode", "redhat.vscode-yaml"],
+      "settings": {
+        "[yaml]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        }
+      }
+    }
+  },
   "installsAfter": ["ghcr.io/nikaro/features/packages"]
 }

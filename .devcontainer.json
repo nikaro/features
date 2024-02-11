@@ -3,15 +3,7 @@
   "image": "ghcr.io/nikaro/debian-devcontainer:latest",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "EditorConfig.EditorConfig",
-        "esbenp.prettier-vscode",
-        "foxundermoon.shell-format",
-        "GitHub.copilot",
-        "github.vscode-github-actions",
-        "mads-hartmann.bash-ide-vscode",
-        "redhat.vscode-yaml"
-      ]
+      "extensions": ["EditorConfig.EditorConfig", "GitHub.copilot"]
     }
   },
   "features": {
