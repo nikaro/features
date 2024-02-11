@@ -17,6 +17,12 @@ ShellCheck, a static analysis tool for shell scripts.
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
 
+## Customizations
+
+### VS Code Extensions
+
+- `mads-hartmann.bash-ide-vscode`
+
 
 
 ---

@@ -24,7 +24,6 @@ Python packaging and dependency management made easy.
 ### VS Code Extensions
 
 - `ms-python.python`
-- `ms-python.vscode-pylance`
 
 
 
