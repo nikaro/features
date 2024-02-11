@@ -93,3 +93,24 @@ remove_nanolayer() {
     rm -f "$tmp_dir"/nanolayer-*
   fi
 }
+
+get_arch64_simple() {
+  case "$(uname -m)" in
+  x86_64)
+    echo "amd64"
+    ;;
+  aarch64 | armv8* | arm64)
+    echo "arm64"
+    ;;
+  *)
+    err "Architecture unsupported"
+    ;;
+  esac
+}
+
+get_latest_gh_release() {
+  curl -s "https://api.github.com/repos/${1}/releases/latest" |
+    grep tag_name |
+    cut -d '"' -f 4 |
+    sed 's/v//'
+}
