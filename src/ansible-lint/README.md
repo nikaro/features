@@ -23,6 +23,7 @@ Linter for Ansible.
 
 ### VS Code Extensions
 
+- `esbenp.prettier-vscode`
 - `redhat.ansible`
 - `redhat.vscode-yaml`
 
