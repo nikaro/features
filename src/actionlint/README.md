@@ -18,6 +18,13 @@ Static checker for GitHub Actions workflow files.
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
 | debug | Enable debug mode. | boolean | false |
 
+## Customizations
+
+### VS Code Extensions
+
+- `github.vscode-github-actions`
+- `redhat.vscode-yaml`
+
 
 
 ---

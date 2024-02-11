@@ -25,8 +25,7 @@ Google Cloud CLI.
 
 ### VS Code Extensions
 
-- `github.vscode-github-actions`
-- `GitHub.vscode-pull-request-github`
+- `GoogleCloudTools.cloudcode`
 
 
 

@@ -1,13 +1,13 @@
 
-# mypy (mypy)
+# ruff (ruff)
 
-Optional static typing for Python.
+An extremely fast Python linter, written in Rust.
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/nikaro/features/mypy:1": {}
+    "ghcr.io/nikaro/features/ruff:1": {}
 }
 ```
 
@@ -22,10 +22,11 @@ Optional static typing for Python.
 
 ### VS Code Extensions
 
-- `matangover.mypy`
+- `charliermarsh.ruff`
+- `ms-python.python`
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/mypy/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/nikaro/features/blob/main/src/ruff/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

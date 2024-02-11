@@ -24,6 +24,7 @@ Linter for Ansible.
 ### VS Code Extensions
 
 - `redhat.ansible`
+- `redhat.vscode-yaml`
 
 
 

@@ -18,6 +18,12 @@ Rye is a project and package management solution for Python.
 | version | Version to install. Defaults to the latest version available. | string | - |
 | debug | Enable debug logging. | boolean | false |
 
+## Customizations
+
+### VS Code Extensions
+
+- `ms-python.python`
+
 
 
 ---

@@ -17,6 +17,12 @@ Simple and flexible tool for managing secrets.
 |-----|-----|-----|-----|
 | version | Version to install. If not specified, the latest version will be installed. | string | - |
 
+## Customizations
+
+### VS Code Extensions
+
+- `signageos.signageos-vscode-sops`
+
 
 
 ---

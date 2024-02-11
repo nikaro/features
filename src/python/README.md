@@ -18,6 +18,12 @@ Python installation.
 | version | Python version to install. Defaults to the latest version available. | string | 3.12 |
 | debug | Enable debug logging. | boolean | false |
 
+## Customizations
+
+### VS Code Extensions
+
+- `ms-python.python`
+
 
 
 ---
