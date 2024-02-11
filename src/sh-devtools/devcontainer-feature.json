@@ -1,0 +1,31 @@
+{
+  "id": "sh-devtools",
+  "version": "1.0.0",
+  "name": "sh-devtools",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/sh-devtools",
+  "description": "Install sh/bash dev tools.",
+  "options": {
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "foxundermoon.shell-format",
+        "mads-hartmann.bash-ide-vscode"
+      ],
+      "settings": {
+        "[shellscript]": {
+          "editor.defaultFormatter": "foxundermoon.shell-format",
+          "editor.formatOnSave": true
+        },
+        "shellformat.path": "/usr/local/bin/shfmt",
+        "shellformat.useEditorConfig": true
+      }
+    }
+  },
+  "installsAfter": ["ghcr.io/nikaro/features/packages"]
+}
