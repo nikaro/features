@@ -12,31 +12,14 @@ reload_profile
 
 # get latest version
 if [ -z "${VERSION:-}" ]; then
-  VERSION=$(
-    curl -L "https://api.github.com/repos/direnv/direnv/releases/latest" |
-      grep tag_name |
-      cut -d '"' -f 4 |
-      sed 's/v//'
-  )
+  VERSION="$(get_latest_gh_release direnv/direnv)"
 fi
-
-# get architecture
-case "$(uname -m)" in
-x86_64)
-  ARCH="amd64"
-  ;;
-aarch64 | armv8* | arm64)
-  ARCH="arm64"
-  ;;
-*)
-  err "unsupported architecture"
-  ;;
-esac
 
 # install if needed
 if ! direnv version | grep -q -e "$VERSION"; then
-  curl -L "https://github.com/direnv/direnv/releases/download/v${VERSION}/direnv.linux-${ARCH}" \
-    -o /usr/local/bin/direnv
+  FILENAME="direnv.linux-$(get_arch64_simple)"
+  URL="https://github.com/direnv/direnv/releases/download/v${VERSION}/${FILENAME}"
+  curl -L "$URL" -o /usr/local/bin/direnv
   chmod +x /usr/local/bin/direnv
 
   # setup shells

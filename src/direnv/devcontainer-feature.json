@@ -1,7 +1,7 @@
 {
   "id": "direnv",
   "name": "direnv",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/direnv",
   "description": "Load and unload environment variables depending on the current directory.",
   "options": {
@@ -28,5 +28,10 @@
       "type": "volume"
     }
   ],
+  "customizations": {
+    "vscode": {
+      "extensions": ["mkhl.direnv"]
+    }
+  },
   "installsAfter": ["ghcr.io/nikaro/features/packages"]
 }
