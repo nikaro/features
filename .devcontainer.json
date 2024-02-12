@@ -1,12 +1,8 @@
 {
   "name": "features",
   "image": "ghcr.io/nikaro/debian-devcontainer:latest",
-  "customizations": {
-    "vscode": {
-      "extensions": ["EditorConfig.EditorConfig", "GitHub.copilot"]
-    }
-  },
   "features": {
+    "ghcr.io/nikaro/features/base": {},
     "ghcr.io/nikaro/features/actionlint": {},
     "ghcr.io/nikaro/features/devcontainer-cli": {},
     "ghcr.io/nikaro/features/pre-commit": {},
