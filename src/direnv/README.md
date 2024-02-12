@@ -18,6 +18,12 @@ Load and unload environment variables depending on the current directory.
 | version | Version to install. Defaults to the latest version available. | string | - |
 | debug | Enable debug logging. | boolean | false |
 
+## Customizations
+
+### VS Code Extensions
+
+- `mkhl.direnv`
+
 
 
 ---
