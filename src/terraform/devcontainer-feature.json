@@ -1,6 +1,6 @@
 {
   "id": "terraform",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "name": "terraform",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/terraform",
   "description": "Terraform enables you to safely and predictably create, change, and improve infrastructure.",
@@ -14,7 +14,22 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["hashicorp.terraform"]
+      "extensions": ["hashicorp.terraform"],
+      "settings": {
+        "[terraform]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.formatOnSave": true,
+          "editor.formatOnSaveMode": "file"
+        },
+        "[terraform-vars]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.formatOnSave": true,
+          "editor.formatOnSaveMode": "file"
+        },
+        "terraform.languageServer.terraform.path": "/usr/local/bin/tofu",
+        "terraform.experimentalFeatures.prefillRequiredFields": true,
+        "terraform.experimentalFeatures.validateOnSave": true
+      }
     }
   },
   "installsAfter": ["ghcr.io/nikaro/features/packages"]
