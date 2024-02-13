@@ -17,18 +17,11 @@ pkg_install jq
 VERSION="${VERSION:-3.12}"
 
 if ! python3 --version 2>&1 | grep -q -e "^Python $VERSION"; then
-  # detect if the distribution is on glibc or musl
-  if ldd --version | grep -q musl; then
-    LIBC="musl"
-  else
-    LIBC="gnu"
-  fi
-
   # get download url
   JQ_FILTER='.assets[] | select('
   JQ_FILTER=$JQ_FILTER' (.name | contains("linux"))'
   JQ_FILTER=$JQ_FILTER' and (.name | contains("'$VERSION'"))'
-  JQ_FILTER=$JQ_FILTER' and (.name | contains("'$LIBC'"))'
+  JQ_FILTER=$JQ_FILTER' and (.name | contains("'$(get_libc)'"))'
   JQ_FILTER=$JQ_FILTER' and (.name | contains("-'$(uname -m)'-"))'
   JQ_FILTER=$JQ_FILTER' and (.name | endswith(".tar.gz"))'
   JQ_FILTER=$JQ_FILTER' ) | .browser_download_url'

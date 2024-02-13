@@ -44,14 +44,8 @@ ensure_nanolayer() {
   pkg_install jq
 
   if ! type nanolayer >/dev/null 2>&1; then
-    if [ -x "/sbin/apk" ]; then
-      clib_type=musl
-    else
-      clib_type=gnu
-    fi
-
     tmp_dir=$(mktemp -d -t nanolayer-XXXXXXXXXX)
-    filename=nanolayer-"$(uname -m)"-unknown-linux-$clib_type.tgz
+    filename=nanolayer-"$(uname -m)"-unknown-linux-$(get_libc).tgz
     repo="devcontainers-contrib/nanolayer"
     version=$(curl -s https://api.github.com/repos/$repo/releases/latest | jq -r '.tag_name')
 
@@ -127,4 +121,12 @@ get_latest_gh_release() {
     grep tag_name |
     cut -d '"' -f 4 |
     sed 's/v//'
+}
+
+get_libc() {
+  if ldd --version | grep -q musl; then
+    echo "musl"
+  else
+    echo "gnu"
+  fi
 }
