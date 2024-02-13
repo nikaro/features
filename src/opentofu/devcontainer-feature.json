@@ -1,6 +1,6 @@
 {
   "id": "opentofu",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "name": "opentofu",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/opentofu",
   "description": "OpenTofu lets you declaratively manage your cloud infrastructure.",
@@ -26,7 +26,9 @@
           "editor.formatOnSave": true,
           "editor.formatOnSaveMode": "file"
         },
-        "opentofu.languageServer.opentofu.path": "/usr/local/bin/tofu"
+        "opentofu.languageServer.opentofu.path": "/usr/local/bin/tofu",
+        "opentofu.experimentalFeatures.prefillRequiredFields": true,
+        "opentofu.experimentalFeatures.validateOnSave": true
       }
     }
   },
