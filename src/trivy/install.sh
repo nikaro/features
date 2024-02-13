@@ -6,14 +6,12 @@ if [ "${DEBUG:-}" = "true" ]; then
   set -o xtrace
 fi
 
+# shellcheck source=library_scripts.sh
+. ./library_scripts.sh
+
 # get latest version
 if [ -z "${VERSION:-}" ]; then
-  VERSION="$(
-    curl -s https://api.github.com/repos/aquasecurity/trivy/releases/latest |
-      grep tag_name |
-      cut -d '"' -f 4 |
-      sed 's/v//'
-  )"
+  VERSION="$(get_latest_gh_release aquasecurity/trivy)"
 fi
 
 case "$(uname -m)" in
@@ -29,9 +27,15 @@ aarch64 | armv8* | arm64)
   ;;
 esac
 
-curl -sSL "https://github.com/aquasecurity/trivy/releases/download/v${VERSION}/trivy_${VERSION}_Linux-${ARCHITECTURE}.tar.gz" -o /tmp/trivy.tar.gz
-tar -xzf /tmp/trivy.tar.gz -C /tmp trivy
-mv /tmp/trivy /usr/local/bin/trivy
+FILENAME="trivy_${VERSION}_Linux-${ARCHITECTURE}.tar.gz"
+URL="https://github.com/aquasecurity/trivy/releases/download/v${VERSION}/${FILENAME}"
+curl -L "$URL" -o "/tmp/${FILENAME}"
+tar \
+  --extract \
+  --verbose \
+  --auto-compress \
+  --file="/tmp/${FILENAME}" \
+  --directory=/usr/local/bin \
+  trivy
 chmod 0755 /usr/local/bin/trivy
-
-rm -rf /tmp/trivy.tar.gz
+rm -rf "/tmp/${FILENAME}"
