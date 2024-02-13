@@ -22,6 +22,4 @@ if ! tofu version | grep -q -e "$VERSION"; then
   unzip "${FILENAME}" tofu -d /usr/local/bin
   chmod 0755 /usr/local/bin/tofu
   rm -rf "${FILENAME}"
-  # workaround for: https://github.com/gamunu/vscode-opentofu/issues/9
-  ln -sf /usr/local/bin/tofu /usr/local/bin/terraform
 fi
