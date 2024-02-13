@@ -1,0 +1,32 @@
+{
+  "id": "aws-cli",
+  "version": "1.0.0",
+  "name": "aws-cli",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/aws-cli",
+  "description": "AWS Command Line Interface.",
+  "options": {
+    "debug": {
+      "default": false,
+      "description": "Enable debug output.",
+      "type": "boolean"
+    },
+    "bin_dir": {
+      "default": "/usr/local/bin",
+      "description": "Path to the binary directory.",
+      "proposals": ["/usr/local/bin"],
+      "type": "string"
+    },
+    "install_dir": {
+      "default": "/usr/local/aws-cli",
+      "description": "Path to the aws-cli directory.",
+      "proposals": ["/usr/local/aws-cli"],
+      "type": "string"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["AmazonWebServices.aws-toolkit-vscode"]
+    }
+  },
+  "installsAfter": ["ghcr.io/nikaro/features/packages"]
+}
