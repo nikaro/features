@@ -1,7 +1,7 @@
 
 # node (node)
 
-Simple Python version management.
+Node.js® is an open-source, cross-platform JavaScript runtime environment.
 
 ## Example Usage
 
