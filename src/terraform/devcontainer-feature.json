@@ -1,6 +1,6 @@
 {
   "id": "terraform",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "terraform",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/terraform",
   "description": "Terraform enables you to safely and predictably create, change, and improve infrastructure.",
@@ -26,7 +26,6 @@
           "editor.formatOnSave": true,
           "editor.formatOnSaveMode": "file"
         },
-        "terraform.languageServer.terraform.path": "/usr/local/bin/tofu",
         "terraform.experimentalFeatures.prefillRequiredFields": true,
         "terraform.experimentalFeatures.validateOnSave": true
       }
