@@ -9,59 +9,40 @@ fi
 # shellcheck source=library_scripts.sh
 . ./library_scripts.sh
 
-# install requirements
-pkg_install curl
-pkg_install jq
-
 # get latest version
 if [ -z "${VERSION:-}" ]; then
-  VERSION="$(curl -fsSL https://api.github.com/repos/nodejs/node/releases/latest | jq -r '.tag_name')"
+  VERSION="$(get_latest_gh_release nodejs/node)"
 fi
 
-# get architecture
-case "$(uname -m)" in
-x86_64)
-  ARCH="x64"
-  ;;
-aarch64 | armv8* | arm64)
-  ARCH="arm64"
-  ;;
-*)
-  err "unsupported architecture"
-  ;;
-esac
-
 # install if needed
-if ! node --version 2>&1 | grep -q -e "^${VERSION}"; then
+if ! node --version 2>&1 | grep -q -e "^v${VERSION}$"; then
+  # get architecture
+  ARCH="$(get_arch64_x)"
+
   # set url
   if ldd --version | grep -q musl; then
-    URL="https://unofficial-builds.nodejs.org/download/release/${VERSION}/node-${VERSION}-linux-${ARCH}-musl.tar.xz"
+    FILENAME=node-v${VERSION}-linux-${ARCH}-musl.tar.xz
+    URL="https://unofficial-builds.nodejs.org/download/release/v${VERSION}/${FILENAME}"
     # arm64 is not yet supported for musl
     if [ "${ARCH}" = "arm64" ]; then
       err "arm64-musl unsupported"
     fi
   else
-    URL="https://nodejs.org/dist/${VERSION}/node-${VERSION}-linux-${ARCH}.tar.xz"
+    FILENAME=node-v${VERSION}-linux-${ARCH}.tar.xz
+    URL="https://nodejs.org/dist/v${VERSION}/${FILENAME}"
   fi
 
   # download and install
-  curl -fsSL "${URL}" -o /tmp/node.tar.xz
-  tar -xaf /tmp/node.tar.xz -C /opt
-  rm -rf /tmp/node.tar.xz
-
-  # setup shells
-  if [ -d "/etc/profile.d" ]; then
-    {
-      echo "export PATH=\"/opt/node-${VERSION}-linux-${ARCH}/bin:\$PATH\""
-    } >/etc/profile.d/node.sh
-  fi
-  if [ -d "/etc/fish/conf.d" ]; then
-    {
-      echo "set -p fish_user_paths /opt/node-${VERSION}-linux-${ARCH}/bin"
-    } >/etc/fish/conf.d/node.fish
-  fi
+  curl -L "$URL" -o "/tmp/${FILENAME}"
+  tar \
+    --extract \
+    --verbose \
+    --auto-compress \
+    --file="/tmp/${FILENAME}" \
+    --exclude="CHANGELOG.md" \
+    --exclude="LICENSE" \
+    --exclude="README.md" \
+    --strip-components=1 \
+    --directory=/usr/local
+  rm -rf "/tmp/${FILENAME}"
 fi
-
-# remove installed requirements
-pkg_remove curl
-pkg_remove jq
