@@ -1,6 +1,6 @@
 {
   "id": "tflint",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "name": "tflint",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/tflint",
   "description": "A Pluggable Terraform Linter.",
