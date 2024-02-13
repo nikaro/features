@@ -14,11 +14,9 @@ ensure_nanolayer
 nanolayer install devcontainer-feature "ghcr.io/nikaro/features/node" \
   --option debug="${DEBUG:-}"
 
-reload_profile
-
 VERSION=${VERSION:-"latest"}
 
-if ! npm list --short | grep -q "$PACKAGE"; then
+if ! npm list --global --short | grep -q "$PACKAGE"; then
   if [ "$VERSION" = "latest" ]; then
     npm_installation="$PACKAGE"
   else
@@ -26,7 +24,7 @@ if ! npm list --short | grep -q "$PACKAGE"; then
   fi
 
   # install package
-  npm install -g "$npm_installation"
+  npm install --global "$npm_installation"
 fi
 
 remove_nanolayer

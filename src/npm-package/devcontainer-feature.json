@@ -1,7 +1,7 @@
 {
   "id": "npm-package",
   "name": "npm-package",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Installs a npm package.",
   "documentationURL": "http://github.com/nikaro/features/tree/main/src/npm-package",
   "options": {
