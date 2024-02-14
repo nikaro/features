@@ -1,6 +1,6 @@
 {
   "id": "trivy",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "name": "trivy",
   "documentationURL": "https://github.com/nikaro/features/tree/main/src/trivy",
   "description": "Install trivy, a vulnerability scanner for containers and other artifacts.",
