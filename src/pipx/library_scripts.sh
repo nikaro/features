@@ -9,7 +9,10 @@ err() {
 }
 
 git_checkout() {
-  [ -d "$2" ] || git -c advice.detachedHead=0 clone --branch "$3" --depth 1 "$1" "$2" || err "Failed to clone $1"
+  repo="$1"
+  dir="$2"
+  branch="$3"
+  [ -d "$dir" ] || git -c advice.detachedHead=0 clone --branch "$branch" --depth 1 "$repo" "$dir" || err "Failed to clone $repo"
 }
 
 reload_profile() {
@@ -20,18 +23,19 @@ reload_profile() {
 
 pkg_install() {
   # ensure package is installed
+  pkg="$1"
   if [ -x "/usr/bin/apt-get" ]; then
-    if ! dpkg -l | grep '^ii' | awk '{print $2}' | grep -q -e "^$1\$"; then
+    if ! dpkg -l | grep '^ii' | awk '{print $2}' | grep -q -e "^$pkg\$"; then
       apt-get update -y
-      apt-get -y install "$1"
+      apt-get -y install "$pkg"
       # create a semaphor file
-      mktemp -t "$1-XXXXXXXXXX"
+      mktemp -t "$pkg-XXXXXXXXXX"
     fi
   elif [ -x "/sbin/apk" ]; then
-    if ! apk info 2>&1 | grep -q -e "^$1\$"; then
-      apk add --no-cache "$1"
+    if ! apk info 2>&1 | grep -q -e "^$pkg\$"; then
+      apk add --no-cache "$pkg"
       # create a semaphor file
-      mktemp -t "$1-XXXXXXXXXX"
+      mktemp -t "$pkg-XXXXXXXXXX"
     fi
   else
     err "unsupported distro"
@@ -40,9 +44,6 @@ pkg_install() {
 
 ensure_nanolayer() {
   # ensure nanolayer is installed
-  pkg_install curl
-  pkg_install jq
-
   if ! type nanolayer >/dev/null 2>&1; then
     tmp_dir=$(mktemp -d -t nanolayer-XXXXXXXXXX)
     filename=nanolayer-"$(uname -m)"-unknown-linux-$(get_libc).tgz
@@ -61,17 +62,18 @@ ensure_nanolayer() {
 
 pkg_remove() {
   # remove package if it was installed by this script
+  pkg="$1"
   tmp_dir=$(dirname "$(mktemp -t detect-tmp-dir-XXXXXXXXXX)")
-  if ls "$tmp_dir"/"$1"-* >/dev/null 2>&1; then
+  if ls "$tmp_dir"/"$pkg"-* >/dev/null 2>&1; then
     if [ -x "/usr/bin/apt-get" ]; then
-      apt-get -y purge "$1" --auto-remove
+      apt-get -y purge "$pkg" --auto-remove
       rm -rf /var/lib/apt/lists/*
     elif [ -x "/sbin/apk" ]; then
-      apk del "$1"
+      apk del "$pkg"
     else
       err "unsupported distro"
     fi
-    rm -f "$tmp_dir"/"$1"-*
+    rm -f "$tmp_dir"/"$pkg"-*
   fi
 }
 
@@ -82,8 +84,6 @@ remove_nanolayer() {
     if type nanolayer >/dev/null 2>&1; then
       rm -f /usr/local/bin/nanolayer
     fi
-    pkg_remove curl
-    pkg_remove jq
     rm -f "$tmp_dir"/nanolayer-*
   fi
 }
@@ -97,7 +97,7 @@ get_arch64_simple() {
     echo "arm64"
     ;;
   *)
-    err "Architecture unsupported"
+    err "unsupported architecture: $(uname -m)"
     ;;
   esac
 }
@@ -111,13 +111,28 @@ get_arch64_x() {
     echo "arm64"
     ;;
   *)
-    err "Architecture unsupported"
+    err "unsupported architecture: $(uname -m)"
+    ;;
+  esac
+}
+
+get_arch64_b() {
+  case "$(uname -m)" in
+  x86_64)
+    echo "64bit"
+    ;;
+  aarch64 | armv8* | arm64)
+    echo "ARM64"
+    ;;
+  *)
+    err "unsupported architecture: $(uname -m)"
     ;;
   esac
 }
 
 get_latest_gh_release() {
-  curl -s "https://api.github.com/repos/${1}/releases/latest" |
+  repo="$1"
+  curl -s "https://api.github.com/repos/${repo}/releases/latest" |
     grep tag_name |
     cut -d '"' -f 4 |
     sed 's/v//'
