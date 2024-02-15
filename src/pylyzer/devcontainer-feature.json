@@ -1,0 +1,31 @@
+{
+  "id": "pylyzer",
+  "name": "pylyzer",
+  "version": "1.0.0",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/pylyzer",
+  "description": "pylyzer is a static code analyzer / language server for Python, written in Rust.",
+  "options": {
+    "version": {
+      "default": "",
+      "description": "Version to install. If not specified, the latest version will be installed.",
+      "proposals": ["0.2.1"],
+      "type": "string"
+    },
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["pylyzer.pylyzer", "ms-python.python"]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/pipx",
+    "ghcr.io/nikaro/features/pyenv",
+    "ghcr.io/nikaro/features/python"
+  ]
+}
