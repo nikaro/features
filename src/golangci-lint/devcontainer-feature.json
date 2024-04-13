@@ -1,0 +1,24 @@
+{
+  "id": "golanci-lint",
+  "name": "golanci-lint",
+  "version": "1.0.0",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/golanci-lint",
+  "description": "Install golangci-lint tool.",
+  "options": {
+    "debug": {
+      "default": false,
+      "description": "Enable debug logging.",
+      "type": "boolean"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.Go"]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/nikaro/features/packages",
+    "ghcr.io/nikaro/features/go",
+    "ghcr.io/nikaro/features/go-devtools"
+  ]
+}
