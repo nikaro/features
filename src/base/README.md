@@ -23,7 +23,6 @@ My personal base settings/extenstions.
 
 - `EditorConfig.EditorConfig`
 - `esbenp.prettier-vscode`
-- `GitHub.copilot`
 
 
 
