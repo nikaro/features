@@ -1,8 +1,8 @@
 {
-  "id": "golanci-lint",
-  "name": "golanci-lint",
+  "id": "golangci-lint",
+  "name": "golangci-lint",
   "version": "1.0.0",
-  "documentationURL": "https://github.com/nikaro/features/tree/main/src/golanci-lint",
+  "documentationURL": "https://github.com/nikaro/features/tree/main/src/golangci-lint",
   "description": "Install golangci-lint tool.",
   "options": {
     "debug": {
