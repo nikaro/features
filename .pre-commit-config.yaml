@@ -75,6 +75,6 @@ repos:
       - id: shellcheck
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.22.0
+    rev: v3.24.0
     hooks:
       - id: commitizen
