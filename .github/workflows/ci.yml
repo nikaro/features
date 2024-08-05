@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Run pre-commit
-        uses: nikaro/actions/pre-commit@ed5ef534b365f534b5b3907122ff707cb36a3503 # 1.6.7
+        uses: nikaro/actions/pre-commit@cecb5d4e1f07cde50d8c5738e4a1c60c4938fc9f # 1.6.10
         with:
           python-version: 3.x
 
